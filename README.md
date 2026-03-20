@@ -29,10 +29,82 @@ Please, fill the following sections about your project.
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
 
-### Exploratory Data Analysis
+## Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+### Pre-processing
+The preprocessing was simple and straightforward:
+
+- removed drinks/brands with missing or invalid values
+- removed invalid entries such as `Average Price = 0.00`
+- applied a basic cleaning/translation step to make labels easier to read and compare
+- converted numeric columns to proper numeric types
+- merged both datasets on brand name
+
+### Dataset overview
+
+#### Shapes
+- **Consumer dataset:** `(31894, 13)`
+- **Shops dataset:** `(1219, 5)`
+- **Merged dataset:** `(23214, 18)`
+- **Matched brands:** `5`
+
+#### Common brands between both datasets
+- 古茗
+- 喜茶
+- 沪上阿姨
+- 茶百道
+- 蜜雪冰城
+
+### Basic statistics
+
+#### Consumer dataset
+- **Rows:** `31894`
+- **Unique brands:** `8`
+- **Unique cities:** `16`
+- **Unique product types:** `5`
+
+| Statistic | Price | Quantity | Order Amount |
+|---|---:|---:|---:|
+| Count | 31894 | 31894 | 31894 |
+| Mean | 21.37 | 2.01 | 42.86 |
+| Std | 7.80 | 0.82 | 24.30 |
+| Min | 8.00 | 1.00 | 8.00 |
+| 25% | 14.58 | 1.00 | 24.06 |
+| 50% | 21.32 | 2.00 | 35.22 |
+| 75% | 28.11 | 3.00 | 59.43 |
+| Max | 35.00 | 3.00 | 105.00 |
+
+#### Shops dataset
+- **Rows:** `1219`
+- **Unique brands:** `1218`
+- **Unique types:** `5`
+
+| Statistic | Average Price | Number of Stores |
+|---|---:|---:|
+| Count | 1219 | 1219 |
+| Mean | 21.35 | 161.06 |
+| Std | 15.17 | 991.55 |
+| Min | 3.00 | 1.00 |
+| 25% | 13.65 | 6.00 |
+| 50% | 17.00 | 19.00 |
+| 75% | 22.45 | 58.50 |
+| Max | 218.00 | 25095.00 |
+
+### First insights
+- The consumer dataset is focused on a small set of major brands.
+- The shops dataset is much broader and covers a large number of brands.
+- Only **5 brands** overlap between both datasets, so linkage plots should be interpreted carefully.
+- The number of stores is highly skewed: a few brands have very large store networks compared to the rest.
+
+### Visualizations
+We generated the following plots for the EDA:
+
+- Top 10 brands by number of consumer orders
+- Top 10 cities by number of consumer orders
+- Top 10 brands by number of stores
+- Average price vs number of stores
+- Brand popularity vs number of stores
+- Consumer paid price vs official brand average price
 
 ### Related work
 
