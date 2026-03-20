@@ -34,11 +34,15 @@ Please, fill the following sections about your project.
 ### Pre-processing
 The preprocessing was simple and straightforward:
 
-- removed drinks/brands with missing or invalid values
-- removed invalid entries such as `Average Price = 0.00`
-- applied a basic cleaning/translation step to make labels easier to read and compare
-- converted numeric columns to proper numeric types
-- merged both datasets on brand name
+- translated both datasets into English
+- kept the original Chinese shop names
+- kept the original Chinese city names in the consumer dataset
+- removed rows with missing or invalid values
+- removed invalid entries such as shops with `Average Price = 0.00`
+- sorted the drink shop dataset by `Number of Stores` from highest to lowest
+- kept only `tea drinks`, `coffee`, and `milk drinks` in the drink shop dataset
+- dropped unnecessary columns from the consumer dataset: `user_id`, `product_id`, `order_date`, `member`, and `social_touch`
+- converted into JSON file
 
 ### Dataset overview
 
