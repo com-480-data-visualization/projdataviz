@@ -83,13 +83,10 @@ The preprocessing was simple and straightforward:
 ### Visualizations
 We generated the following plots for the EDA:
 
-- Top 10 brands by number of consumer orders
 ![top 10 consumer brands orders](/assets/plots/01_top_10_brands_orders.png)
-- Top 10 cities by number of consumer orders
-- Top 10 brands by number of stores
-- Average price vs number of stores
-- Brand popularity vs number of stores
-- Consumer paid price vs official brand average price
+![top 10 cities orders](/assets/plots/02_top_10_cities_orders.png)
+![top 10 brands store](/assets/plots/03_top_10_brands_stores.png)
+![avg price vs stores](/assets/plots/04_avg_price_vs_stores.png)
 
 ### Related work
 ### What others have already done with the data?
