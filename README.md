@@ -105,7 +105,7 @@ Our project offers an original approach through multi-dimensional analysis, cros
 -	Interactive design serves as another key contribution. Users can filter by city, brand, year, and price range, highlight specific groups, zoom into regions, and switch between metrics. This interactivity supports flexible, user-driven data exploration and significantly improves analytical depth compared with static visualizations in existing work.
 -	We focus on actionable business insights rather than only descriptive statistics. Through correlation analysis, we explore meaningful questions such as how brand pricing relates to consumer spending, and who the core consumers are. These insights deliver practical value for understanding the Chinese drink shop market and exceed the scope of prior research.
 
-### What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
+### What source of inspiration do you take?
 Our choice of topic is inspired by reports on the global bubble tea market, which highlight its rapid growth in recent years. As the birthplace of milk tea, China has developed a highly diverse beverage culture along with a vast number of drink shops, making this phenomenon particularly distinctive and worth exploring.
 
 Our visualization design and analytical framework are further informed by professional data visualization practices in the retail and FMCG (Fast Moving Consumer Goods) industries, as presented on mainstream visualization platforms and in business reports. The main sources of inspiration are as follows:
@@ -113,7 +113,7 @@ Our visualization design and analytical framework are further informed by profes
 -	Word cloud visualization in marketing and social media analysis: Word clouds are widely used in brand marketing reports and social media analytics to represent attention or popularity through variations in font size. We adapt this technique to visualize beverage brand store counts, where font size reflects the number of stores. Compared with traditional bar charts, this approach makes leading brands more visually prominent and improves readability.
 -	Geographic heatmaps in urban consumption studies: Urban consumption reports published by institutions such as China’s National Bureau of Statistics and consulting firms (e.g., McKinsey and Deloitte) frequently use geographic heatmaps to illustrate regional consumption patterns. This inspires our design of city-level consumption heatmaps, enabling a clear and professional representation of spatial consumption characteristics.
 
-### In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+### Statement on Prior Dataset Exploration
 This dataset has not been previously used by us in other courses or projects.
 
 ## Milestone 2 (17th April, 5pm)
