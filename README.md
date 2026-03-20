@@ -19,15 +19,65 @@ Please, fill the following sections about your project.
 
 ### Dataset
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)).
+The report utilizes two primary datasets:
+
+    Brand Information Table: Contains basic information for 1,219 freshly made beverage brands, including Name, Logo Link, Average Price, Number of Stores, and Category.
+
+
+    Order Details Table: Contains 31,800 order records, featuring fields such as City, City Level, Brand, Product Type, Price, Quantity, Order Amount, Consumption Scenario, Gender, Age Group, Consumption Motive, Order Date, and Year.
+
+Data Quality Assessment Strengths: 
+
+    The Brand Information Table has a clear structure with complete fields and no significant missing values. 
+    The data dimensions are comprehensive, ranging from macro-level (city tiers, brand scale) to micro-level (individual motives, demographics).
+
 
 ### Problematic
 
 > Frame the general topic of your visualization and the main axis that you want to develop.
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
+
+**Research Theme:** Brand Landscape and Consumer Behavior in China's Freshly Made Beverage Market
+
+**Objectives & Audience**
+
+- **Target Audience**: Beverage industry professionals, market researchers, and the public interested in consumer behavior.
+- **Motivation**: Given the intense competition in the beverage market, this analysis uses data visualization to clarify market structures and consumer preferences, providing a strategic reference for brands.
+
+**Visualization Perspectives**
+
+*Dimension 1: Brand Market Landscape (1,219 Brands)*
+
+| **Field** | **Visualization Question** |
+|-----------|----------------------------|
+| **Average Price** | What is the price distribution across different brand types? Is there clear price stratification? |
+| **Number of Stores** | What is the market concentration? How large is the gap between leading brands and "long-tail" brands? |
+| **Category (Tea/Coffee/Milk)** | How do coffee and tea brands differ in terms of quantity and price positioning? |
+
+**Proposed Visualizations**: Price distribution histograms (faceted by brand type), Top 20 bar chart by store count, and a Price vs. Store Count scatter plot (positioning matrix highlighting head brands).
+
+*Dimension 2: Consumer Behavior Analysis (31,800 Orders)*
+
+| **Field** | **Visualization Question** |
+|-----------|----------------------------|
+| **Price / Order Amount** | What is the actual distribution of Average Transaction Value (ATV)? Does it differ from the brand's listed average price? |
+| **Scenario (Dine-in/Pick-up/Delivery)** | What is the breakdown of delivery vs. dine-in vs. pick-up? Does ATV vary by scenario? |
+| **Motive (Novelty/Quality/Social)** | What drives consumer purchases? Do different motives correspond to different price points? |
+| **Product Type** | How popular are sub-categories like pure tea, fruit tea, and milk tea? |
+
+**Proposed Visualizations**: Consumption scenario pie/bar charts + grouped boxplots (ATV by scenario), stacked bar charts for motives (grouped by age or city tier), and product type word clouds or bar charts.
+
+*Dimension 3: Brand Positioning vs. Actual Consumption (Cross-Table Analysis)*
+
+| **Analysis Question** | **Data Source** |
+|-----------------------|-----------------|
+| Is the "Average Price" in the Brand Table consistent with the "Actual Transaction Price" in the Order Table? | Brand Table + Order Table (aggregated by brand) |
+| Do consumers in different city tiers prefer different types of brands? | Order Table + Brand Table (linked by brand type) |
+| Are there significant differences in brand choice across different age or gender groups? | Order Table (Brand + Demographics) |
+
+**Proposed Visualizations**: Scatter plot comparing brand average price vs. actual transaction price (with a diagonal reference line), grouped bar charts showing brand category order shares by city tier, and Faceted Bar Chart for cross-analysis of Age × Gender × Brand Type.
+
 
 ## Exploratory Data Analysis
 ### Pre-processing
