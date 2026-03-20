@@ -51,7 +51,6 @@ The preprocessing was simple and straightforward:
 
 | Statistic | Price | Quantity | Order Amount |
 |---|---:|---:|---:|
-| Count | 31800 | 31800 | 31800 |
 | Mean | 21.37 | 2.00 | 42.86 |
 | Std | 7.80 | 0.82 | 24.31 |
 | Min | 8.00 | 1.00 | 8.00 |
@@ -67,7 +66,6 @@ The preprocessing was simple and straightforward:
 
 | Statistic | Average Price | Number of Stores |
 |---|---:|---:|
-| Count | 1219 | 1219 |
 | Mean | 21.35 | 161.06 |
 | Std | 15.17 | 991.55 |
 | Min | 3.00 | 1.00 |
@@ -86,6 +84,7 @@ The preprocessing was simple and straightforward:
 We generated the following plots for the EDA:
 
 - Top 10 brands by number of consumer orders
+![top 10 consumer brands orders](/assets/plots/01_top_10_brands_orders.png)
 - Top 10 cities by number of consumer orders
 - Top 10 brands by number of stores
 - Average price vs number of stores
