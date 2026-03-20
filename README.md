@@ -44,20 +44,20 @@ The preprocessing was simple and straightforward:
 - converted into JSON file
 
 #### Consumer dataset
-- **Rows:** `31894`
+- **Rows:** `31800`
 - **Unique brands:** `8`
 - **Unique cities:** `16`
 - **Unique product types:** `5`
 
 | Statistic | Price | Quantity | Order Amount |
 |---|---:|---:|---:|
-| Count | 31894 | 31894 | 31894 |
-| Mean | 21.37 | 2.01 | 42.86 |
-| Std | 7.80 | 0.82 | 24.30 |
+| Count | 31800 | 31800 | 31800 |
+| Mean | 21.37 | 2.00 | 42.86 |
+| Std | 7.80 | 0.82 | 24.31 |
 | Min | 8.00 | 1.00 | 8.00 |
 | 25% | 14.58 | 1.00 | 24.06 |
-| 50% | 21.32 | 2.00 | 35.22 |
-| 75% | 28.11 | 3.00 | 59.43 |
+| 50% | 21.32 | 2.00 | 35.19 |
+| 75% | 28.11 | 3.00 | 59.42 |
 | Max | 35.00 | 3.00 | 105.00 |
 
 #### Shops dataset
@@ -77,10 +77,10 @@ The preprocessing was simple and straightforward:
 | Max | 218.00 | 25095.00 |
 
 ### First insights
-- The consumer dataset is focused on a small set of major brands.
+- The consumer dataset focuses on a small set of major brands.
 - The shops dataset is much broader and covers a large number of brands.
-- Only **5 brands** overlap between both datasets, so linkage plots should be interpreted carefully.
-- The number of stores is highly skewed: a few brands have very large store networks compared to the rest.
+- Only **5 brands** overlap between the two datasets, so the linkage plots should be interpreted carefully.
+- The number of stores is highly skewed, with a few brands having very large store networks compared to the rest.
 
 ### Visualizations
 We generated the following plots for the EDA:
