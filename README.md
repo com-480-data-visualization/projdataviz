@@ -30,7 +30,6 @@ Please, fill the following sections about your project.
 > - Think of an overview for the project, your motivation, and the target audience.
 
 ## Exploratory Data Analysis
-
 ### Pre-processing
 The preprocessing was simple and straightforward:
 
@@ -43,23 +42,6 @@ The preprocessing was simple and straightforward:
 - kept only `tea drinks`, `coffee`, and `milk drinks` in the drink shop dataset
 - dropped unnecessary columns from the consumer dataset: `user_id`, `product_id`, `order_date`, `member`, and `social_touch`
 - converted into JSON file
-
-### Dataset overview
-
-#### Shapes
-- **Consumer dataset:** `(31894, 13)`
-- **Shops dataset:** `(1219, 5)`
-- **Merged dataset:** `(23214, 18)`
-- **Matched brands:** `5`
-
-#### Common brands between both datasets
-- 古茗
-- 喜茶
-- 沪上阿姨
-- 茶百道
-- 蜜雪冰城
-
-### Basic statistics
 
 #### Consumer dataset
 - **Rows:** `31894`
