@@ -93,12 +93,28 @@ We generated the following plots for the EDA:
 - Consumer paid price vs official brand average price
 
 ### Related work
+### What others have already done with the data?
+The first drink shop dataset has been previously explored in data visualization projects on the Heywhale platform (https://www.heywhale.com/mw/dataset/6595190fb96e5fc9eba7fd27/project). Existing work is relatively limited, mainly presenting basic statistics such as the top 100 drink shops by store count (via bar charts) and the distribution of average price tiers (via pie charts). As a result, the analytical perspective remains narrow, focusing primarily on basic brand-level attributes. These studies do not extend to multi-dimensional analysis of the market, such as examining consumer behavior, brand performance, or the relationships between brand characteristics and consumption data.
 
+Moreover, prior projects rely on single-dimensional visualizations and do not integrate multiple datasets. In particular, they do not combine the consumption dataset with the drink shop brand information dataset (e.g., average price, number of stores, product types). They also overlook deeper insights related to consumer demographics (e.g., gender, age group), consumption patterns (e.g., scenarios, motivations), and the relationship between brand operation metrics (e.g., store count, pricing) and actual consumption performance (e.g., order amount, sales volume).
 
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+### Why is your approach original?
+Our project offers an original approach through multi-dimensional analysis, cross-dataset integration, interactive visualization, and business-oriented insight mining, which greatly advances beyond existing single-dimensional work on the same dataset.
+-	We carry out cross-dataset analysis by combining the drink shop brand dataset and the consumer order dataset, linked by brand and city. This integration allows us to explore relationships between brand attributes such as average price, store count, and product type, and real consumer behavior including spending, order amount, and preferences. Such combined analysis is absent in previous studies.
+-	We design diverse and innovative visualizations instead of basic static charts. Our visualization system includes a word cloud where font size reflects store count, geographic heatmaps, box plots, dual-axis bar charts, scatter plots with trend lines, and stacked bar charts. The word cloud for store quantity is particularly original and intuitive compared with traditional bar charts.
+	Interactive design serves as another key contribution. Users can filter by city, brand, year, and price range, highlight specific groups, zoom into regions, and switch between metrics. This interactivity supports flexible, user-driven data exploration and significantly improves analytical depth compared with static visualizations in existing work.
+-	We focus on actionable business insights rather than only descriptive statistics. Through correlation analysis, we explore meaningful questions such as how brand pricing relates to consumer spending, and who the core consumers are. These insights deliver practical value for understanding the Chinese drink shop market and exceed the scope of prior research.
+
+### What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
+Our choice of topic is inspired by reports on the global bubble tea market, which highlight its rapid growth in recent years. As the birthplace of milk tea, China has developed a highly diverse beverage culture along with a vast number of drink shops, making this phenomenon particularly distinctive and worth exploring.
+
+Our visualization design and analytical framework are further informed by professional data visualization practices in the retail and FMCG (Fast Moving Consumer Goods) industries, as presented on mainstream visualization platforms and in business reports. The main sources of inspiration are as follows:
+-	Retail brand analysis on Tableau Public: Visualization cases on Tableau Public provide valuable references for multi-indicator brand comparison. These projects often employ dual-axis bar charts to compare metrics such as sales volume and revenue across brands, as well as scatter plots to analyze relationships between operational indicators and market performance. Drawing on these approaches, we design visualizations such as brand ranking charts and store count versus revenue scatter plots.
+-	Word cloud visualization in marketing and social media analysis: Word clouds are widely used in brand marketing reports and social media analytics to represent attention or popularity through variations in font size. We adapt this technique to visualize beverage brand store counts, where font size reflects the number of stores. Compared with traditional bar charts, this approach makes leading brands more visually prominent and improves readability.
+-	Geographic heatmaps in urban consumption studies: Urban consumption reports published by institutions such as China’s National Bureau of Statistics and consulting firms (e.g., McKinsey and Deloitte) frequently use geographic heatmaps to illustrate regional consumption patterns. This inspires our design of city-level consumption heatmaps, enabling a clear and professional representation of spatial consumption characteristics.
+
+### In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+This dataset has not been previously used by us in other courses or projects.
 
 ## Milestone 2 (17th April, 5pm)
 
