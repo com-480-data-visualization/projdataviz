@@ -1,0 +1,41 @@
+/* Center the entire page */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Basic button style */
+.btn {
+  width: 280px;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Fresh blue */
+.blue {
+  background-color: #73a9ff;
+}
+
+/* Fresh pink */
+.pink {
+  background-color: #f7a3d2;
+}
+
+/* Fresh green */
+.green {
+  background-color: #88d8b0;
+}
