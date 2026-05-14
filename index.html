@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="China's Freshly Made Beverage Market - Brand Landscape & Consumer Behavior Analysis">
+    <title>China Beverage Market | Data Visualization</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="module" defer src="/assets/js/main.js"></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-icon">🥤</span>
+          <span class="logo-text">China<span>Bev</span></span>
+        </div>
+        <nav class="nav-links">
+          <a href="#market-overview" class="nav-link active">Market Overview</a>
+          <a href="#consumer-behavior" class="nav-link">Consumer Behavior</a>
+          <a href="#recommendation" class="nav-link">Recommendation</a>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+      <!-- Personalized Recommendation Section -->
+      <section id="recommendation" class="section">
+        <div class="container">
+          <h2 class="section-title">Personalized Brand Recommendation</h2>
+          
+          <div class="grid-2">
+            <!-- Recommendation Form -->
+            <div class="card">
+              <h3>Find Your Perfect Beverage</h3>
+              <form id="recommendation-form">
+                <div class="form-group">
+                  <label class="form-label">Your City Tier:</label>
+                  <select id="city-tier" class="filter-select">
+                    <option value="tier1">Tier 1 City</option>
+                    <option value="tier2">Tier 2 City</option>
+                    <option value="tier3">Tier 3 City</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Age Group:</label>
+                  <select id="age-group" class="filter-select">
+                    <option value="18-24">18-24 years</option>
+                    <option value="25-34">25-34 years</option>
+                    <option value="35-44">35-44 years</option>
+                    <option value="45+">45+ years</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Gender:</label>
+                  <select id="gender" class="filter-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Consumption Motive:</label>
+                  <select id="motive" class="filter-select">
+                    <option value="novelty">Novelty Seeking</option>
+                    <option value="quality">Quality & Taste</option>
+                    <option value="social">Social Experience</option>
+                  </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Get Recommendations</button>
+              </form>
+            </div>
+            
+            <!-- Recommendation Results -->
+            <div class="card" id="recommendation-results">
+              <h3>Recommended for You</h3>
+              <div id="recommendations-list">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Overview Section -->
+      <section id="market-overview" class="section">
+        <div class="container">
+          <h2 class="section-title">Brand Market Landscape</h2>
+          
+          <!-- Visualization 1: Price Distribution -->
+          <div class="viz-container">
+            <h3 class="viz-title">Price Distribution by Brand Type</h3>
+            <div id="price-distribution-chart">
+              <!-- D3 visualization will go here -->
+            </div>
+          </div>
+
+          <!-- Visualization 2: Market Concentration -->
+          <div class="viz-container">
+            <h3 class="viz-title">Market Concentration: Top Brands by Store Count</h3>
+            <div id="market-concentration-chart">
+              <!-- D3 visualization will go here -->
+            </div>
+          </div>
+
+          <!-- Visualization 3: Price vs Store Count Matrix -->
+          <div class="viz-container">
+            <h3 class="viz-title">Price vs. Store Count Positioning Matrix</h3>
+            <div id="positioning-matrix">
+              <!-- D3 visualization will go here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consumer Behavior Section -->
+      <section id="consumer-behavior" class="section">
+        <div class="container">
+          <h2 class="section-title">Consumer Behavior Analysis</h2>
+          
+          <!-- Filters -->
+          <div class="filter-group">
+            <button class="filter-button active" data-filter="all">All Cities</button>
+            <button class="filter-button" data-filter="tier1">Tier 1 Cities</button>
+            <button class="filter-button" data-filter="tier2">Tier 2 Cities</button>
+            <button class="filter-button" data-filter="tier3">Tier 3 Cities</button>
+          </div>
+
+          <!-- Grid of Consumer Visualizations -->
+          <div class="grid-2">
+            <div class="viz-container">
+              <h3 class="viz-title">Consumption by Scenario</h3>
+              <div id="scenario-chart">
+                <!-- D3 visualization will go here -->
+              </div>
+            </div>
+            
+            <div class="viz-container">
+              <h3 class="viz-title">Consumption by Motive</h3>
+              <div id="motive-chart">
+                <!-- D3 visualization will go here -->
+              </div>
+            </div>
+            
+            <div class="viz-container">
+              <h3 class="viz-title">Age Group Distribution</h3>
+              <div id="age-distribution">
+                <!-- D3 visualization will go here -->
+              </div>
+            </div>
+            
+            <div class="viz-container">
+              <h3 class="viz-title">Gender Split</h3>
+              <div id="gender-chart">
+                <!-- D3 visualization will go here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Type Popularity -->
+          <div class="viz-container">
+            <h3 class="viz-title">Product Type Popularity</h3>
+            <div id="product-type-chart">
+              <!-- D3 visualization will go here -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-text">COM-480 Data Visualization Project · 2026</p>
+          <p class="footer-text">Missipsa Annane · Lingyi Zhu · Yujia Wang</p>
+        </div>
+        <div class="footer-stats">
+          <span class="footer-stat">1,219 Brands</span>
+          <span class="footer-stat">31,800 Orders</span>
+          <span class="footer-stat">16+ Cities</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
