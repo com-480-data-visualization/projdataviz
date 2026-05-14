@@ -1,0 +1,83 @@
+/* BASE STYLES */
+
+:root {
+  /* Color Scheme - Modern Dark/Warm Theme */
+  --primary-dark: #1a1a2e;
+  --primary: #16213e;
+  --primary-light: #0f3460;
+  --secondary: #e94560;
+  --secondary-light: #ff6b6b;
+  --accent: #00b4d8;
+  --accent-light: #48cae4;
+  --bg-main: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-dark: #2d3436;
+  --text-gray: #636e72;
+  --text-light: #ffffff;
+  --border: #dfe6e9;
+  
+  /* Typography */
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* APPLIED TO ALL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--secondary);
+  color: var(--text-light);
+}
+
+/* BODY */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LISTS */
+ul {
+  list-style: none;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+}

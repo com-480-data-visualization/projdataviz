@@ -1,0 +1,183 @@
+/* LAYOUT STYLES */
+
+/* CONTAINERS */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* SECTIONS */
+.section {
+  padding: var(--spacing-xl) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--secondary);
+}
+
+/* GRID SYSTEMS */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* FLEX UTILITIES */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CARDS */
+.card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--border);
+}
+
+/* VIZUALIZATION CONTAINERS */
+.viz-container {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  min-height: 500px;
+  position: relative;
+  border: 1px solid var(--border);
+}
+
+.viz-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-dark);
+}
+
+/* FILTERS */
+.filter-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.filter-select, .filter-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-dark);
+}
+
+.filter-select:hover, .filter-button:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.filter-button.active {
+  background: var(--secondary);
+  color: var(--text-light);
+  border-color: var(--secondary);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--secondary);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-outline:hover {
+  background: var(--secondary);
+  color: var(--text-light);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* FORM STYLES */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.btn-full {
+  width: 100%;
+}
