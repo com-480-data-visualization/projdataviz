@@ -2,10 +2,16 @@ import * as d3 from "d3";
 
 const TREE_SELECTOR = "#decision-tree-chart";
 
-const NODE_RADIUS = 15;
-const NODE_VERTICAL_GAP = 110;
-const NODE_HORIZONTAL_GAP = 350;
-const TREE_MARGIN = 120;
+const NODE_RADIUS = 34;
+const NODE_VERTICAL_GAP = 165;
+const NODE_HORIZONTAL_GAP = 480;
+const TREE_MARGIN = 130;
+const TITLE_FONT_SIZE = 40;
+const SUBTITLE_FONT_SIZE = 26;
+const TITLE_X_OFFSET = 56;
+const TITLE_Y_OFFSET = -16;
+const SUBTITLE_X_OFFSET = 56;
+const SUBTITLE_Y_OFFSET = 32;
 
 const productColor = d3.scaleOrdinal(d3.schemeTableau10);
 
@@ -54,14 +60,17 @@ export function renderTree(treeData, highlightedPath = []) {
 
   const minX = Math.min(...xValues);
   const maxX = Math.max(...xValues);
+  const minY = Math.min(...yValues);
   const maxY = Math.max(...yValues);
 
   const containerWidth = container.clientWidth || 1100;
-  const treeWidth = maxY + TREE_MARGIN * 5;
   const treeHeight = maxX - minX + TREE_MARGIN * 2;
 
-  const width = Math.max(containerWidth, treeWidth);
-  const height = Math.max(640, treeHeight);
+  // Keep the SVG viewport equal to the visible container width.
+  // The tree itself can extend beyond the viewport and be explored with pan/zoom.
+  // This prevents the full tree from being scaled down and keeps labels readable.
+  const width = containerWidth;
+  const height = Math.max(820, treeHeight);
 
   const highlighted = new Set(highlightedPath);
   const totalSamples = Number(treeData.metadata?.training_samples ?? 0);
@@ -72,18 +81,25 @@ export function renderTree(treeData, highlightedPath = []) {
     .append("svg")
     .attr("viewBox", [0, 0, width, height])
     .attr("role", "img")
-    .attr("aria-label", "Decision tree visualization");
+    .attr("aria-label", "Decision tree visualization")
+    .style("touch-action", "none")
+    .style("-webkit-tap-highlight-color", "transparent");
 
   const viewport = svg.append("g");
 
+  const treeCenterX = (minY + maxY) / 2;
+  const treeCenterY = (minX + maxX) / 2;
+  const viewportCenterX = width / 2;
+  const viewportCenterY = height / 2;
+
   const initialTransform = d3.zoomIdentity.translate(
-    TREE_MARGIN,
-    -minX + TREE_MARGIN
+    viewportCenterX - treeCenterX,
+    viewportCenterY - treeCenterY
   );
 
   const zoom = d3
     .zoom()
-    .scaleExtent([0.35, 2.6])
+    .scaleExtent([0.25, 2.8])
     .on("zoom", (event) => {
       viewport.attr("transform", event.transform);
     });
@@ -142,15 +158,21 @@ export function renderTree(treeData, highlightedPath = []) {
   nodeGroups
     .append("text")
     .attr("class", "tree-node-title")
-    .attr("x", 30)
-    .attr("y", -10)
+    .attr("x", TITLE_X_OFFSET)
+    .attr("y", TITLE_Y_OFFSET)
+    .attr("font-size", TITLE_FONT_SIZE)
+    .attr("font-weight", 850)
+    .style("pointer-events", "none")
     .text((node) => getNodeTitle(node.data));
 
   nodeGroups
     .append("text")
     .attr("class", "tree-node-subtitle")
-    .attr("x", 30)
-    .attr("y", 18)
+    .attr("x", SUBTITLE_X_OFFSET)
+    .attr("y", SUBTITLE_Y_OFFSET)
+    .attr("font-size", SUBTITLE_FONT_SIZE)
+    .attr("font-weight", 650)
+    .style("pointer-events", "none")
     .text((node) => getNodeSubtitle(node.data));
 }
 
