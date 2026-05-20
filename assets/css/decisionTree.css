@@ -1,5 +1,5 @@
 .tree-explorer-card {
-  padding: var(--spacing-md);
+  padding: 1.25rem;
 }
 
 .tree-profile-card {
@@ -8,40 +8,53 @@
 
 .tree-profile-form {
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 0.85rem 1rem;
   align-items: start;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1rem;
 }
 
 .tree-profile-header {
   display: flex;
   justify-content: space-between;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+  margin-bottom: 1rem;
 }
 
 .tree-profile-header h3 {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
-.tree-choice-group {
-  border: 0;
-  padding: 0;
+.tree-profile-header .tree-muted {
+  font-size: 0.84rem;
+  line-height: 1.35;
   margin: 0;
 }
 
-.tree-choice-group legend {
-  font-weight: 700;
-  font-size: 0.92rem;
+.tree-choice-group {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  column-gap: 0.65rem;
+  min-width: 0;
+}
+
+.tree-choice-title {
+  font-weight: 800;
+  font-size: 0.82rem;
+  line-height: 1;
   color: var(--primary-dark);
-  margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 .tree-choice-options {
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
 .tree-choice {
@@ -58,14 +71,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
-  padding: 0.45rem 0.85rem;
+  min-height: 30px;
+  padding: 0.34rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--bg-card);
   color: var(--text-dark);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
   transition:
     color var(--transition-fast),
     border-color var(--transition-fast),
@@ -84,7 +99,7 @@
   background: var(--secondary);
   border-color: var(--secondary);
   color: var(--text-light);
-  box-shadow: 0 6px 16px rgba(233, 69, 96, 0.22);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.18);
 }
 
 .tree-choice-input:focus-visible + .tree-choice-label {
@@ -93,15 +108,10 @@
 }
 
 .tree-generate-button {
-  min-height: 44px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.tree-action-row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  min-height: 40px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 24px rgba(233, 69, 96, 0.22);
 }
 
 .tree-generate-button[hidden] {
@@ -112,6 +122,7 @@
   opacity: 0.45;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
 .tree-result-grid {
@@ -261,10 +272,23 @@
 }
 
 .decision-tree-container {
-  margin-top: var(--spacing-md);
-  min-height: 880px;
-  padding-top: var(--spacing-sm);
+  position: relative;
+  margin-top: 1rem;
+  min-height: 820px;
+  padding-top: 1rem;
   border-top: 1px solid var(--border);
+}
+
+.decision-tree-container .viz-title {
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+}
+
+.tree-floating-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 15;
 }
 
 .decision-tree-chart {
@@ -406,28 +430,37 @@
 
 @media (max-width: 1100px) {
   .tree-profile-form {
-    grid-template-columns: 1fr;
-  }
-
-  .tree-action-row {
-    justify-content: stretch;
-  }
-
-  .tree-generate-button {
-    width: 100%;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .tree-profile-form,
   .tree-result-grid,
   .tree-result-details {
     grid-template-columns: 1fr;
   }
 
+  .tree-explorer-card {
+    padding: 1rem;
+  }
+
+  .tree-profile-form {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .tree-choice-group {
+    grid-template-columns: 68px 1fr;
+  }
+
   .tree-generate-button {
-    grid-column: auto;
-    width: 100%;
+    width: auto;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .tree-floating-button {
+    right: 0.75rem;
+    bottom: 0.75rem;
   }
 
   .tree-choice-options {
@@ -435,9 +468,9 @@
   }
 
   .tree-choice-label {
-    min-height: 34px;
-    padding: 0.4rem 0.75rem;
-    font-size: 0.85rem;
+    min-height: 30px;
+    padding: 0.32rem 0.65rem;
+    font-size: 0.8rem;
   }
 
   .tree-bar-row {
@@ -459,5 +492,17 @@
 
   .tree-tooltip {
     max-width: min(280px, calc(100vw - 48px));
+  }
+}
+
+@media (max-width: 480px) {
+  .tree-choice-group {
+    grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+
+  .tree-choice-title,
+  .tree-choice-options {
+    grid-column: 1;
   }
 }

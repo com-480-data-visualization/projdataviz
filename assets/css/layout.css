@@ -9,7 +9,7 @@
 
 /* SECTIONS */
 .section {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
   border-bottom: 1px solid var(--border);
 }
 

@@ -11,7 +11,7 @@ export async function initDecisionTree() {
 
   if (!form) return;
 
-  const generateButton = form.querySelector(".tree-generate-button");
+  const generateButton = document.querySelector(".tree-generate-button");
 
   try {
     const treeData = await loadDecisionTree(DECISION_TREE_DATA_PATH);

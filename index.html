@@ -32,8 +32,8 @@
             </div>
 
             <form id="recommendation-form" class="tree-profile-form">
-              <fieldset class="tree-choice-group">
-                <legend>City Tier</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="city-choice-label">
+                <div id="city-choice-label" class="tree-choice-title">City</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="city_level" value="1st-tier" required>
@@ -50,10 +50,10 @@
                     <span class="tree-choice-label">Tier 3</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
 
-              <fieldset class="tree-choice-group">
-                <legend>Age Group</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="age-choice-label">
+                <div id="age-choice-label" class="tree-choice-title">Age</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="age_group" value="18-24" required>
@@ -75,10 +75,10 @@
                     <span class="tree-choice-label">45+</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
 
-              <fieldset class="tree-choice-group">
-                <legend>Gender</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="gender-choice-label">
+                <div id="gender-choice-label" class="tree-choice-title">Gender</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="gender" value="female" required>
@@ -90,10 +90,10 @@
                     <span class="tree-choice-label">Male</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
 
-              <fieldset class="tree-choice-group">
-                <legend>Motive</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="motive-choice-label">
+                <div id="motive-choice-label" class="tree-choice-title">Motive</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="motive" value="Quality" required>
@@ -110,10 +110,10 @@
                     <span class="tree-choice-label">Social</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
 
-              <fieldset class="tree-choice-group">
-                <legend>Scenario</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="scenario-choice-label">
+                <div id="scenario-choice-label" class="tree-choice-title">Scenario</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="scenario" value="Delivery" required>
@@ -130,10 +130,10 @@
                     <span class="tree-choice-label">Pick up</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
 
-              <fieldset class="tree-choice-group">
-                <legend>Budget</legend>
+              <div class="tree-choice-group" role="group" aria-labelledby="budget-choice-label">
+                <div id="budget-choice-label" class="tree-choice-title">Budget</div>
                 <div class="tree-choice-options">
                   <label class="tree-choice">
                     <input class="tree-choice-input" type="radio" name="budget_band" value="Low" required>
@@ -150,18 +150,22 @@
                     <span class="tree-choice-label">High</span>
                   </label>
                 </div>
-              </fieldset>
-
-              <div class="tree-action-row">
-                <button type="submit" class="btn btn-primary tree-generate-button" hidden disabled>
-                  Generate My Drink
-                </button>
               </div>
+
             </form>
 
             <div class="decision-tree-container">
               <h3 class="viz-title">Decision Tree Path</h3>
               <div id="decision-tree-chart" class="decision-tree-chart"></div>
+              <button
+                type="submit"
+                form="recommendation-form"
+                class="btn btn-primary tree-generate-button tree-floating-button"
+                hidden
+                disabled
+              >
+                Generate My Drink
+              </button>
             </div>
 
             <div id="recommendation-result" class="tree-result-panel">
