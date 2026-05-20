@@ -1,6 +1,6 @@
 import { DECISION_TREE_DATA_PATH } from "../constants/consts.js";
 import { loadDecisionTree } from "./loadTree.js";
-import { renderResult } from "./renderResult.js";
+import { renderEmptyResult, renderResult } from "./renderResult.js";
 import { renderTree } from "./renderTree.js";
 import { traverseTree } from "./traverseTree.js";
 
@@ -14,20 +14,24 @@ export async function initDecisionTree() {
   try {
     const treeData = await loadDecisionTree(DECISION_TREE_DATA_PATH);
 
-    function updateTree(event) {
-      event?.preventDefault();
+    // Render the full tree on page load, but do not calculate a recommendation yet.
+    renderTree(treeData);
+    renderEmptyResult();
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
       const answers = getFormAnswers(form);
       const result = traverseTree(treeData.root, answers);
 
       renderTree(treeData, result.path);
       renderResult(result, treeData.metadata);
-    }
-
-    form.addEventListener("submit", updateTree);
-    form.addEventListener("change", updateTree);
-
-    updateTree();
+    });
   } catch (error) {
     console.error(error);
 

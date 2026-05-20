@@ -29,76 +29,139 @@
         <div class="container">
           <h2 class="section-title">Consumer Preference Tree</h2>
 
-          <div class="grid-2">
-            <div class="card">
-              <h3>Find Your Beverage Profile</h3>
+          <div class="card tree-profile-card">
+            <h3>Find Your Beverage Profile</h3>
 
-              <form id="recommendation-form">
-                <div class="form-group">
-                  <label class="form-label" for="city-level">City Tier</label>
-                  <select id="city-level" name="city_level" class="filter-select">
-                    <option value="1st-tier">Tier 1 City</option>
-                    <option value="2nd-tier">Tier 2 City</option>
-                    <option value="3rd-tier">Tier 3 City</option>
-                  </select>
+            <form id="recommendation-form" class="tree-profile-form">
+              <fieldset class="tree-choice-group">
+                <legend>City Tier</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="city_level" value="1st-tier" required>
+                    <span class="tree-choice-label">Tier 1</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="city_level" value="2nd-tier">
+                    <span class="tree-choice-label">Tier 2</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="city_level" value="3rd-tier">
+                    <span class="tree-choice-label">Tier 3</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <div class="form-group">
-                  <label class="form-label" for="age-group">Age Group</label>
-                  <select id="age-group" name="age_group" class="filter-select">
-                    <option value="18-24">18-24 years</option>
-                    <option value="25-34">25-34 years</option>
-                    <option value="35-44">35-44 years</option>
-                    <option value="Over 45">45+ years</option>
-                  </select>
+              <fieldset class="tree-choice-group">
+                <legend>Age Group</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="age_group" value="18-24" required>
+                    <span class="tree-choice-label">18-24</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="age_group" value="25-34">
+                    <span class="tree-choice-label">25-34</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="age_group" value="35-44">
+                    <span class="tree-choice-label">35-44</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="age_group" value="Over 45">
+                    <span class="tree-choice-label">45+</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <div class="form-group">
-                  <label class="form-label" for="gender">Gender</label>
-                  <select id="gender" name="gender" class="filter-select">
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                  </select>
+              <fieldset class="tree-choice-group">
+                <legend>Gender</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="gender" value="female" required>
+                    <span class="tree-choice-label">Female</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="gender" value="male">
+                    <span class="tree-choice-label">Male</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <div class="form-group">
-                  <label class="form-label" for="motive">Consumption Motive</label>
-                  <select id="motive" name="motive" class="filter-select">
-                    <option value="Quality">Quality & Taste</option>
-                    <option value="Novelty">Novelty Seeking</option>
-                    <option value="Social">Social Experience</option>
-                  </select>
+              <fieldset class="tree-choice-group">
+                <legend>Motive</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="motive" value="Quality" required>
+                    <span class="tree-choice-label">Quality</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="motive" value="Novelty">
+                    <span class="tree-choice-label">Novelty</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="motive" value="Social">
+                    <span class="tree-choice-label">Social</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <div class="form-group">
-                  <label class="form-label" for="scenario">Scenario</label>
-                  <select id="scenario" name="scenario" class="filter-select">
-                    <option value="Delivery">Delivery</option>
-                    <option value="Dine-in">Dine-in</option>
-                    <option value="Pick-up">Pick-up</option>
-                  </select>
+              <fieldset class="tree-choice-group">
+                <legend>Scenario</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="scenario" value="Delivery" required>
+                    <span class="tree-choice-label">Delivery</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="scenario" value="Dine-in">
+                    <span class="tree-choice-label">Dine in</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="scenario" value="Pick-up">
+                    <span class="tree-choice-label">Pick up</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <div class="form-group">
-                  <label class="form-label" for="budget-band">Budget</label>
-                  <select id="budget-band" name="budget_band" class="filter-select">
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                  </select>
+              <fieldset class="tree-choice-group">
+                <legend>Budget</legend>
+                <div class="tree-choice-options">
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="budget_band" value="Low" required>
+                    <span class="tree-choice-label">Low</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="budget_band" value="Medium">
+                    <span class="tree-choice-label">Medium</span>
+                  </label>
+
+                  <label class="tree-choice">
+                    <input class="tree-choice-input" type="radio" name="budget_band" value="High">
+                    <span class="tree-choice-label">High</span>
+                  </label>
                 </div>
+              </fieldset>
 
-                <button type="submit" class="btn btn-primary btn-full">
-                  Update Tree Path
-                </button>
-              </form>
-            </div>
+              <button type="submit" class="btn btn-primary tree-generate-button">
+                Generate My Drink
+              </button>
+            </form>
 
-            <div class="card" id="recommendation-results">
-              <h3>Selected Profile</h3>
-              <div id="recommendation-result">
-                <p class="tree-muted">Choose a profile to highlight a path in the tree.</p>
-              </div>
+            <div id="recommendation-result" class="tree-result-panel">
+              <p class="tree-muted">
+                Your drink profile will appear here after generation.
+              </p>
             </div>
           </div>
 
