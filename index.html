@@ -12,15 +12,10 @@
     <!-- Header Section -->
     <header class="header">
       <div class="nav-container">
-        <div class="logo">
+        <a href="#" class="logo" aria-label="Go to top">
           <span class="logo-icon">🥤</span>
           <span class="logo-text">China<span>Bev</span></span>
-        </div>
-        <nav class="nav-links">
-          <a href="#market-overview" class="nav-link active">Market Overview</a>
-          <a href="#consumer-behavior" class="nav-link">Consumer Behavior</a>
-          <a href="#recommendation" class="nav-link">Recommendation</a>
-        </nav>
+        </a>
       </div>
     </header>
     
@@ -29,8 +24,12 @@
         <div class="container">
           <h2 class="section-title">Consumer Preference Tree</h2>
 
-          <div class="card tree-profile-card">
-            <h3>Find Your Beverage Profile</h3>
+          <div class="card tree-explorer-card">
+            <div class="tree-profile-header">
+              <div>
+                <h3>Find Your Beverage Profile</h3>
+              </div>
+            </div>
 
             <form id="recommendation-form" class="tree-profile-form">
               <fieldset class="tree-choice-group">
@@ -153,20 +152,23 @@
                 </div>
               </fieldset>
 
-              <button type="submit" class="btn btn-primary tree-generate-button">
-                Generate My Drink
-              </button>
+              <div class="tree-action-row">
+                <button type="submit" class="btn btn-primary tree-generate-button" hidden disabled>
+                  Generate My Drink
+                </button>
+              </div>
             </form>
+
+            <div class="decision-tree-container">
+              <h3 class="viz-title">Decision Tree Path</h3>
+              <div id="decision-tree-chart" class="decision-tree-chart"></div>
+            </div>
 
             <div id="recommendation-result" class="tree-result-panel">
               <p class="tree-muted">
                 Your drink profile will appear here after generation.
               </p>
             </div>
-          </div>
-
-          <div class="viz-container decision-tree-container">
-            <div id="decision-tree-chart" class="decision-tree-chart"></div>
           </div>
         </div>
       </section>

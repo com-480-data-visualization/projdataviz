@@ -11,18 +11,26 @@ export async function initDecisionTree() {
 
   if (!form) return;
 
+  const generateButton = form.querySelector(".tree-generate-button");
+
   try {
     const treeData = await loadDecisionTree(DECISION_TREE_DATA_PATH);
 
     // Render the full tree on page load, but do not calculate a recommendation yet.
     renderTree(treeData);
     renderEmptyResult();
+    updateGenerateButtonState(form, generateButton);
+
+    form.addEventListener("change", () => {
+      updateGenerateButtonState(form, generateButton);
+    });
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       if (!form.checkValidity()) {
         form.reportValidity();
+        updateGenerateButtonState(form, generateButton);
         return;
       }
 
@@ -31,6 +39,9 @@ export async function initDecisionTree() {
 
       renderTree(treeData, result.path);
       renderResult(result, treeData.metadata);
+
+      form.reset();
+      updateGenerateButtonState(form, generateButton);
     });
   } catch (error) {
     console.error(error);
@@ -57,4 +68,33 @@ function getFormAnswers(form) {
     scenario: formData.get("scenario"),
     budget_band: formData.get("budget_band"),
   };
+}
+
+function updateGenerateButtonState(form, button) {
+  if (!button) return;
+
+  const hasAnyInput = hasAnySelection(form);
+  const isComplete = isFormComplete(form);
+
+  button.hidden = !hasAnyInput;
+  button.disabled = !isComplete;
+}
+
+function hasAnySelection(form) {
+  return Boolean(form.querySelector("input[type='radio']:checked"));
+}
+
+function isFormComplete(form) {
+  const requiredGroups = [
+    "city_level",
+    "age_group",
+    "gender",
+    "motive",
+    "scenario",
+    "budget_band",
+  ];
+
+  return requiredGroups.every((name) => {
+    return Boolean(form.querySelector(`input[name="${name}"]:checked`));
+  });
 }

@@ -1,5 +1,9 @@
 /* BASE STYLES */
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Color Scheme - Modern Dark/Warm Theme */
   --primary-dark: #1a1a2e;
