@@ -28,6 +28,8 @@ Thumbs.db
 .env.local
 .env.*.local
 
+.codex
+
 # Logs
 logs/
 *.log
