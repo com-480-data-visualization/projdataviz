@@ -1,6 +1,5 @@
-import { CONSUMER_DATA_PATH, DRINKS_SHOP_DATA_PATH } from "./constants/consts.js"
+import { initDecisionTree } from "./decisionTree/initDecisionTree.js";
 
-// entry point
-document.addEventListener('DOMContentLoaded', () => {
-
-})
+document.addEventListener("DOMContentLoaded", () => {
+  initDecisionTree();
+});

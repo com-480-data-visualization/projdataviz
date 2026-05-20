@@ -25,69 +25,86 @@
     </header>
     
     <main>
-      <!-- Personalized Recommendation Section -->
       <section id="recommendation" class="section">
         <div class="container">
-          <h2 class="section-title">Personalized Brand Recommendation</h2>
-          
+          <h2 class="section-title">Consumer Preference Tree</h2>
+
           <div class="grid-2">
-            <!-- Recommendation Form -->
             <div class="card">
-              <h3>Find Your Perfect Beverage</h3>
+              <h3>Find Your Beverage Profile</h3>
+
               <form id="recommendation-form">
                 <div class="form-group">
-                  <label class="form-label">Your City Tier:</label>
-                  <select id="city-tier" class="filter-select">
-                    <option value="tier1">Tier 1 City</option>
-                    <option value="tier2">Tier 2 City</option>
-                    <option value="tier3">Tier 3 City</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label">Age Group:</label>
-                  <select id="age-group" class="filter-select">
-                    <option value="18-24">18-24 years</option>
-                    <option value="25-34">25-34 years</option>
-                    <option value="35-44">35-44 years</option>
-                    <option value="45+">45+ years</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label">Gender:</label>
-                  <select id="gender" class="filter-select">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label">Consumption Motive:</label>
-                  <select id="motive" class="filter-select">
-                    <option value="novelty">Novelty Seeking</option>
-                    <option value="quality">Quality & Taste</option>
-                    <option value="social">Social Experience</option>
+                  <label class="form-label" for="city-level">City Tier</label>
+                  <select id="city-level" name="city_level" class="filter-select">
+                    <option value="1st-tier">Tier 1 City</option>
+                    <option value="2nd-tier">Tier 2 City</option>
+                    <option value="3rd-tier">Tier 3 City</option>
                   </select>
                 </div>
 
-                 <div class="form-group">
-                  <label class="form-label">Budget:</label>
-                  <select id="motive" class="filter-select">
-                    <option value=""></option>
+                <div class="form-group">
+                  <label class="form-label" for="age-group">Age Group</label>
+                  <select id="age-group" name="age_group" class="filter-select">
+                    <option value="18-24">18-24 years</option>
+                    <option value="25-34">25-34 years</option>
+                    <option value="35-44">35-44 years</option>
+                    <option value="Over 45">45+ years</option>
                   </select>
                 </div>
-                
-                <button type="submit" class="btn btn-primary btn-full">Get Recommendations</button>
+
+                <div class="form-group">
+                  <label class="form-label" for="gender">Gender</label>
+                  <select id="gender" name="gender" class="filter-select">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="motive">Consumption Motive</label>
+                  <select id="motive" name="motive" class="filter-select">
+                    <option value="Quality">Quality & Taste</option>
+                    <option value="Novelty">Novelty Seeking</option>
+                    <option value="Social">Social Experience</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="scenario">Scenario</label>
+                  <select id="scenario" name="scenario" class="filter-select">
+                    <option value="Delivery">Delivery</option>
+                    <option value="Dine-in">Dine-in</option>
+                    <option value="Pick-up">Pick-up</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="budget-band">Budget</label>
+                  <select id="budget-band" name="budget_band" class="filter-select">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                  Update Tree Path
+                </button>
               </form>
             </div>
-            
-            <!-- Recommendation Results -->
+
             <div class="card" id="recommendation-results">
-              <h3>Recommended for You</h3>
-              <div id="recommendations-list">
+              <h3>Selected Profile</h3>
+              <div id="recommendation-result">
+                <p class="tree-muted">Choose a profile to highlight a path in the tree.</p>
               </div>
             </div>
+          </div>
+
+          <div class="viz-container decision-tree-container">
+            <h3 class="viz-title">Decision Tree Path</h3>
+            <div id="decision-tree-chart" class="decision-tree-chart"></div>
           </div>
         </div>
       </section>
