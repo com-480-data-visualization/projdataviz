@@ -108,9 +108,10 @@
 }
 
 .tree-generate-button {
-  min-height: 40px;
+  min-height: 46px;
   padding: 0.65rem 1.2rem;
-  font-size: 0.9rem;
+  font-size: 1.02rem;
+  font-weight: 700;
   box-shadow: 0 10px 24px rgba(233, 69, 96, 0.22);
 }
 
@@ -274,7 +275,7 @@
 .decision-tree-container {
   position: relative;
   margin-top: 1rem;
-  min-height: 700px;
+  min-height: 628px;
 }
 
 .decision-tree-container .viz-title {
