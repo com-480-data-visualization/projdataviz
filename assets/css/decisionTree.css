@@ -4,10 +4,9 @@
 
 .tree-profile-form {
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: var(--spacing-md);
   align-items: start;
-  margin-bottom: var(--spacing-md);
 }
 
 .tree-choice-group {
@@ -316,8 +315,8 @@
 }
 
 .tree-tooltip {
-  position: absolute;
-  z-index: 20;
+  position: fixed;
+  z-index: 9999;
   min-width: 210px;
   max-width: 280px;
   padding: 0.85rem 0.95rem;

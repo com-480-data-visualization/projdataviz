@@ -94,6 +94,11 @@
   border: 1px solid var(--border);
 }
 
+#recommendation > div > div.viz-container.decision-tree-container {
+  padding: 0;
+  margin-bottom: 0;
+}
+
 .viz-title {
   font-size: 1.25rem;
   margin-bottom: var(--spacing-sm);

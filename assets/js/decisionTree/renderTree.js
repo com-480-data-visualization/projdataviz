@@ -74,7 +74,7 @@ export function renderTree(treeData, highlightedPath = []) {
 
   const highlighted = new Set(highlightedPath);
   const totalSamples = Number(treeData.metadata?.training_samples ?? 0);
-  const tooltip = createTooltip(container);
+  const tooltip = createTooltip();
 
   const svg = d3
     .select(container)
@@ -226,12 +226,18 @@ function getNodeColor(node) {
   return "#ffffff";
 }
 
-function createTooltip(container) {
+function createTooltip() {
+  const existingTooltip = document.querySelector(".tree-tooltip");
+
+  if (existingTooltip) {
+    existingTooltip.remove();
+  }
+
   const tooltip = document.createElement("div");
   tooltip.className = "tree-tooltip";
   tooltip.setAttribute("role", "tooltip");
 
-  container.appendChild(tooltip);
+  document.body.appendChild(tooltip);
 
   return tooltip;
 }
@@ -239,10 +245,23 @@ function createTooltip(container) {
 function showTooltip(event, node, tooltip, totalSamples) {
   tooltip.innerHTML = getTooltipMarkup(node, totalSamples);
 
-  const containerRect = tooltip.parentElement.getBoundingClientRect();
+  const tooltipWidth = 280;
+  const tooltipHeight = 170;
+  const padding = 16;
 
-  const left = event.clientX - containerRect.left + 14;
-  const top = event.clientY - containerRect.top + 14;
+  let left = event.clientX + 16;
+  let top = event.clientY + 16;
+
+  if (left + tooltipWidth > window.innerWidth - padding) {
+    left = event.clientX - tooltipWidth - 16;
+  }
+
+  if (top + tooltipHeight > window.innerHeight - padding) {
+    top = event.clientY - tooltipHeight - 16;
+  }
+
+  left = Math.max(padding, left);
+  top = Math.max(padding, top);
 
   tooltip.style.left = `${left}px`;
   tooltip.style.top = `${top}px`;
