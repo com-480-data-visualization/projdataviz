@@ -2,16 +2,18 @@ import * as d3 from "d3";
 
 const TREE_SELECTOR = "#decision-tree-chart";
 
-const NODE_RADIUS = 34;
-const NODE_VERTICAL_GAP = 165;
-const NODE_HORIZONTAL_GAP = 480;
-const TREE_MARGIN = 130;
-const TITLE_FONT_SIZE = 40;
-const SUBTITLE_FONT_SIZE = 26;
-const TITLE_X_OFFSET = 56;
-const TITLE_Y_OFFSET = -16;
-const SUBTITLE_X_OFFSET = 56;
-const SUBTITLE_Y_OFFSET = 32;
+const NODE_RADIUS = 26;
+const NODE_VERTICAL_GAP = 95;
+const NODE_HORIZONTAL_GAP = 560;
+const TREE_MARGIN = 110;
+const ROOT_START_X = 90;
+const INITIAL_SCALE = 0.32;
+const TITLE_FONT_SIZE = 32;
+const SUBTITLE_FONT_SIZE = 20;
+const TITLE_X_OFFSET = 44;
+const TITLE_Y_OFFSET = -12;
+const SUBTITLE_X_OFFSET = 44;
+const SUBTITLE_Y_OFFSET = 25;
 
 const productColor = d3.scaleOrdinal(d3.schemeTableau10);
 
@@ -56,12 +58,8 @@ export function renderTree(treeData, highlightedPath = []) {
   const links = root.links();
 
   const xValues = nodes.map((node) => node.x);
-  const yValues = nodes.map((node) => node.y);
-
   const minX = Math.min(...xValues);
   const maxX = Math.max(...xValues);
-  const minY = Math.min(...yValues);
-  const maxY = Math.max(...yValues);
 
   const containerWidth = container.clientWidth || 1100;
   const treeHeight = maxX - minX + TREE_MARGIN * 2;
@@ -70,7 +68,7 @@ export function renderTree(treeData, highlightedPath = []) {
   // The tree itself can extend beyond the viewport and be explored with pan/zoom.
   // This prevents the full tree from being scaled down and keeps labels readable.
   const width = containerWidth;
-  const height = Math.max(820, treeHeight);
+  const height = Math.max(620, Math.min(treeHeight, 720));
 
   const highlighted = new Set(highlightedPath);
   const totalSamples = Number(treeData.metadata?.training_samples ?? 0);
@@ -87,15 +85,12 @@ export function renderTree(treeData, highlightedPath = []) {
 
   const viewport = svg.append("g");
 
-  const treeCenterX = (minY + maxY) / 2;
   const treeCenterY = (minX + maxX) / 2;
-  const viewportCenterX = width / 2;
   const viewportCenterY = height / 2;
 
-  const initialTransform = d3.zoomIdentity.translate(
-    viewportCenterX - treeCenterX,
-    viewportCenterY - treeCenterY
-  );
+  const initialTransform = d3.zoomIdentity
+    .translate(ROOT_START_X, viewportCenterY - treeCenterY * INITIAL_SCALE)
+    .scale(INITIAL_SCALE);
 
   const zoom = d3
     .zoom()
