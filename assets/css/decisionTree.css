@@ -108,11 +108,10 @@
 }
 
 .tree-generate-button {
-  min-height: 52px;
-  padding: 0.9rem 1.6rem;
-  font-size: 1rem;
-  font-weight: 700;
-  box-shadow: 0 12px 28px rgba(233, 69, 96, 0.24);
+  min-height: 40px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 24px rgba(233, 69, 96, 0.22);
 }
 
 .tree-generate-button[hidden] {
@@ -276,7 +275,6 @@
   position: relative;
   margin-top: 1rem;
   min-height: 700px;
-  padding-top: 1rem;
 }
 
 .decision-tree-container .viz-title {
@@ -420,10 +418,6 @@
   color: var(--text-light);
   font-weight: 700;
   text-align: right;
-}
-
-.tree-result-panel {
-  padding-top: var(--spacing-md);
 }
 
 @media (max-width: 1100px) {
