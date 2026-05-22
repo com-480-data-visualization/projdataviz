@@ -40,7 +40,7 @@ export function renderResult(result, metadata) {
 
   container.innerHTML = `
     <div class="tree-profile-size">
-      Your profile matches about <strong>${profileShare}%</strong> of the orders in this dataset.
+      Your profile matches about <strong>${profileShare}%</strong> of the orders.
     </div>
     <div class="tree-result-grid">
       <div class="tree-result-main">
