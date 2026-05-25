@@ -7,6 +7,8 @@ import { renderPriceDistribution, renderGroupedHistogram } from './part1.js';
 import { renderBubbleCloud, renderParetoChart } from './part2.js';
 import { renderPositioningMatrix } from './part3.js';
 
+import { listenToConsumerBehaviorEvent } from "./consumptionBehavior.js";
+
 // Global reactive state cache, supporting slider filtering, multi-view switching, and cross-component linking
 let cachedBrandsData = [];
 let crossCoreBrands = [];
@@ -63,6 +65,8 @@ async function loadAndBootstrap() {
         window.crossCoreBrands = crossCoreBrands;
         console.log("[Data Center] Brand data routing pipeline loaded, state machine running stably.");
 
+        listenToConsumerBehaviorEvent();
+        
     } catch (err) {
         console.error("[Fatal Exception] Main data provisioning pipeline failed:", err);
     }
