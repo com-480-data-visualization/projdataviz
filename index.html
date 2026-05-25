@@ -184,6 +184,15 @@
           <!-- Visualization 1: Price Distribution -->
           <div class="viz-container">
             <h3 class="viz-title">Price Distribution by Brand Type</h3>
+            <div class="view-controls" style="margin-bottom: 20px; display: flex; align-items: center;gap: 4px;">
+              <button id="btn-price-scatter" class="filter-button active">Jitter Scatter View</button>
+              <button id="btn-price-histogram" class="filter-button">Grouped Histogram View</button>
+              <span id="dot-slider-container" style="margin-left: 20px;">
+                <label for="dot-slider">Show Random Dots:</label>
+                <input type="range" id="dot-slider" min="10" max="500" value="60">
+                <span id="dot-count-label">60</span>
+              </span>
+            </div>
             <div id="price-distribution-chart">
               <!-- D3 visualization will go here -->
             </div>
@@ -192,6 +201,14 @@
           <!-- Visualization 2: Market Concentration -->
           <div class="viz-container">
             <h3 class="viz-title">Market Concentration: Top Brands by Store Count</h3>
+            <div class="view-controls" style="margin-bottom: 20px;">
+              <button id="btn-show-bubble" class="filter-button active">Bubble Cloud View</button>
+              <button id="btn-show-pareto" class="filter-button">Pareto Analysis View</button>
+              <span id="slider-container" style="margin-left: 20px;">
+                  <input type="range" id="bubble-count-slider" min="5" max="50" value="20">
+                  <span id="slider-value">20 Brands</span>
+              </span>
+            </div>
             <div id="market-concentration-chart">
               <!-- D3 visualization will go here -->
             </div>
