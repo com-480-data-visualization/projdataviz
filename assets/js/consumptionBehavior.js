@@ -98,7 +98,6 @@ function renderPieChart(containerId, data, chartType, currentCityLabel, cityKey)
     .style("color", colorTextGray)
     .style("border-top", `1px dashed ${colorTextGray}40`) 
     .style("transition", "all 0.3s ease")
-    .html(`<span style="opacity: 0.6; font-style: italic;">// Hover over any chart slice to discover localized market insight telemetry.</span>`);
 
 
   // ======== Render Slices with Entrance Animations ========
@@ -206,7 +205,6 @@ function renderPieChart(containerId, data, chartType, currentCityLabel, cityKey)
           insightContainer
             .style("color", colorTextGray)
             .style("font-weight", "500")
-            .html(`<span style="opacity: 0.6; font-style: italic;">// Hover over any chart slice to discover localized market insight telemetry.</span>`);
         });
     });
 
@@ -443,9 +441,7 @@ function renderTwoTierProductChart(containerId, data) {
     .style("line-height", "1.6")
     .style("text-align", "left")
     .style("color", colorTextDark)
-    .style("background", `${colorTextGray}08`)
     .style("border-radius", "8px")
-    .style("border-left", `4px solid ${colorSecondary}`) 
     .html(`
       <div style="font-weight: 800; font-size: 1.5rem; margin-bottom: 8px; color: ${colorSecondary};">Market Intelligence Insights</div>
       <p style="margin: 0 0 8px 0; color: ${colorTextDark}; font-size: 1.05rem;">
