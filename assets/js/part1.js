@@ -687,6 +687,32 @@ export function renderGroupedHistogram(brandData) {
         .attr("y", d => y(d.count))
         .attr("height", d => height - margin.bottom - y(d.count));
 
+        const labels = itemGroups.selectAll(".bar-label")
+        .data(d => d.values)
+        .enter().append("text")
+        .attr("class", "bar-label")
+        .attr("data-category", d => d.category)
+        .attr("x", d => xSubGroup(d.category) + xSubGroup.bandwidth() / 2)
+        .attr("text-anchor", "middle")
+        .style("font-size", "10px")
+        .style("font-weight", "bold") 
+        .style("font-family", "var(--font-sans, sans-serif)")
+        .style("fill", d => getCategoryColor(d.category))
+        .attr("y", height - margin.bottom)
+        .style("opacity", 0)
+        .text(d => d.count > 0 ? d.count : "");
+
+    labels.transition()
+        .duration(800)
+        .delay((d, i) => i * 40)
+        .ease(d3.easeCubicOut)
+        .attr("y", d => {
+            const idealY = y(d.count) - 5;
+            const baselineY = height - margin.bottom - 8;
+            return d.count > 0 && idealY > baselineY ? baselineY : idealY;
+        })
+        .style("opacity", d => d.count > 0 ? 0.95 : 0); 
+
     // ----------------------------------------------------
     // 7. Interaction binding
     // ----------------------------------------------------
@@ -718,7 +744,8 @@ export function renderGroupedHistogram(brandData) {
     legendItems.on("mouseover", function(event, targetCat) {
         bars.transition().duration(150)
             .attr("opacity", d => d.category === targetCat ? 1.0 : 0.15);
-        
+        itemGroups.selectAll(".bar-label").transition().duration(150)
+            .style("opacity", d => d.count > 0 ? (d.category === targetCat ? 0.9 : 0.1) : 0);
         d3.select(this)
             .style("border-color", "var(--text-gray)")
             .style("background", "rgba(0,0,0,0.02)")
@@ -727,6 +754,9 @@ export function renderGroupedHistogram(brandData) {
     .on("mouseout", function() {
         bars.transition().duration(150).attr("opacity", 0.85);
         
+        itemGroups.selectAll(".bar-label").transition().duration(150)
+            .style("opacity", d => d.count > 0 ? 0.9 : 0);
+            
         d3.select(this)
             .style("border-color", "var(--border)")
             .style("background", "var(--bg-card)")
