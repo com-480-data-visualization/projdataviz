@@ -66,6 +66,8 @@ assets/data/
 - `drink_shops.json`: brand-level data for 1,219 beverage brands
 - `consumer_behavior.json`: consumer order data for 31,800 orders
 - `beverage_decision_tree.json`: exported decision-tree model used for the interactive recommendation visualization
+- `city.json`: Consumer profile and behavioral data across different city tiers, covering scenarios, motives, age, and gender.
+- `product_type_popularity.json`: Market popularity data for 5 major beverage categories and the market share of their top 5 leading brands.
 
 ### Process Book
 
