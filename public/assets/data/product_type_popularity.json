@@ -1,0 +1,69 @@
+{
+    "product_popularity": [
+      {
+        "id": "low-sugar-tea",
+        "product_type": "Low-Sugar Tea Drinks",
+        "total_value": 28.2,
+        "illustration": "./assets/images/low_sugar.jpg",
+        "brands": [
+          { "name": "Nayuki 奈雪", "value": 17.3, "logo": "./assets/images/nayuki.png" },
+          { "name": "Heytea 喜茶", "value": 17.0, "logo": "./assets/images/heytea.png" },
+          { "name": "GoodMe 古茗", "value": 16.9, "logo": "./assets/images/guming.png" },
+          { "name": "Mixue 蜜雪冰城", "value": 16.8, "logo": "./assets/images/mixue.png" },
+          { "name": "ChaPanda 茶百道", "value": 16.5, "logo": "./assets/images/chabaidao.png" }
+        ]
+      },
+      {
+        "id": "fruit-tea",
+        "product_type": "Fruit Tea",
+        "total_value": 24.9,
+        "illustration": "./assets/images/fruit_tea.jpg",
+        "brands": [
+          { "name": "Heytea 喜茶", "value": 17.5, "logo": "./assets/images/heytea.png" },
+          { "name": "Nayuki 奈雪", "value": 17.3, "logo": "./assets/images/nayuki.png" },
+          { "name": "ChaPanda 茶百道", "value": 17.0, "logo": "./assets/images/chabaidao.png" },
+          { "name": "Mixue 蜜雪冰城", "value": 16.4, "logo": "./assets/images/mixue.png" },
+          { "name": "GoodMe 古茗", "value": 16.1, "logo": "./assets/images/guming.png" }
+        ]
+      },
+      {
+        "id": "light-milk-tea",
+        "product_type": "Light Milk Tea",
+        "total_value": 22.0,
+        "illustration": "./assets/images/milk_tea.jpg",
+        "brands": [
+          { "name": "Heytea 喜茶", "value": 17.4, "logo": "./assets/images/heytea.png" },
+          { "name": "ChaPanda 茶百道", "value": 17.3, "logo": "./assets/images/chabaidao.png" },
+          { "name": "GoodMe 古茗", "value": 17.1, "logo": "./assets/images/guming.png" },
+          { "name": "Nayuki 奈雪", "value": 17.0, "logo": "./assets/images/nayuki.png" },
+          { "name": "Mixue 蜜雪冰城", "value": 16.4, "logo": "./assets/images/mixue.png" }
+        ]
+      },
+      {
+        "id": "oat-milk-tea",
+        "product_type": "Oat Milk Tea",
+        "total_value": 17.9,
+        "illustration": "./assets/images/oat.jpg",
+        "brands": [
+          { "name": "GoodMe 古茗", "value": 17.7, "logo": "./assets/images/guming.png" },
+          { "name": "Mixue 蜜雪冰城", "value": 17.2, "logo": "./assets/images/mixue.png" },
+          { "name": "Nayuki 奈雪", "value": 16.9, "logo": "./assets/images/nayuki.png" },
+          { "name": "ChaPanda 茶百道", "value": 16.8, "logo": "./assets/images/chabaidao.png" },
+          { "name": "Heytea 喜茶", "value": 16.3, "logo": "./assets/images/heytea.png" }
+        ]
+      },
+      {
+        "id": "milk-tea-cheese-foam",
+        "product_type": "Milk Tea / Cheese Foam / Others",
+        "total_value": 7.0,
+        "illustration": "./assets/images/cheese_foam.jpg",
+        "brands": [
+          { "name": "ChaPanda 茶百道", "value": 17.8, "logo": "./assets/images/chabaidao.png" },
+          { "name": "GoodMe 古茗", "value": 17.5, "logo": "./assets/images/guming.png" },
+          { "name": "Heytea 喜茶", "value": 16.8, "logo": "./assets/images/heytea.png" },
+          { "name": "Mixue 蜜雪冰城", "value": 16.7, "logo": "./assets/images/mixue.png" },
+          { "name": "Nayuki 奈雪", "value": 15.7, "logo": "./assets/images/nayuki.png" }
+        ]
+      }
+    ]
+}

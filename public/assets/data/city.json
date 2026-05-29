@@ -1,0 +1,90 @@
+{
+  "all": {
+    "scenario": [
+      {"name": "Dine-in", "value": 24.9},
+      {"name": "Pick-up", "value": 10.2},
+      {"name": "Delivery", "value": 64.9}
+    ],
+    "motive": [
+      {"name": "Quality", "value": 44.8},
+      {"name": "Novelty", "value": 40},
+      {"name": "Social", "value": 15.1}
+    ],
+    "age": [
+      {"name": "18-24 years", "value": 38.1},
+      {"name": "25-34 years", "value": 32.7},
+      {"name": "35-44 years", "value": 18.2},
+      {"name": "45+ years", "value": 11}
+    ],
+    "gender": [
+      {"name": "Female", "value": 61.8},
+      {"name": "Male", "value": 38.2}
+    ]
+  },
+  "tier1": {
+    "scenario": [
+      {"name": "Dine-in", "value": 25.2},
+      {"name": "Pick-up", "value": 10.4},
+      {"name": "Delivery", "value": 64.4}
+    ],
+    "motive": [
+      {"name": "Quality", "value": 45.1},
+      {"name": "Novelty", "value": 39.9},
+      {"name": "Social", "value": 14.9}
+    ],
+    "age": [
+      {"name": "18-24 years", "value": 38.3},
+      {"name": "25-34 years", "value": 32.2},
+      {"name": "35-44 years", "value": 18.7},
+      {"name": "45+ years", "value": 10.8}
+    ],
+    "gender": [
+      {"name": "Female", "value": 61.1},
+      {"name": "Male", "value": 38.9}
+    ]
+  },
+  "tier2": {
+    "scenario": [
+      {"name": "Dine-in", "value": 24.7},
+      {"name": "Pick-up", "value": 10.4},
+      {"name": "Delivery", "value": 64.8}
+    ],
+    "motive": [
+      {"name": "Quality", "value": 44.6},
+      {"name": "Novelty", "value": 39.8},
+      {"name": "Social", "value": 15.6}
+    ],
+    "age": [
+      {"name": "18-24 years", "value": 38.2},
+      {"name": "25-34 years", "value": 33.1},
+      {"name": "35-44 years", "value": 17.5},
+      {"name": "45+ years", "value": 11.3}
+    ],
+    "gender": [
+      {"name": "Female", "value": 61.7},
+      {"name": "Male", "value": 38.3}
+    ]
+  },
+  "tier3": {
+    "scenario": [
+      {"name": "Dine-in", "value": 24.6},
+      {"name": "Pick-up", "value": 9.8},
+      {"name": "Delivery", "value": 65.6}
+    ],
+    "motive": [
+      {"name": "Quality", "value": 44.8},
+      {"name": "Novelty", "value": 40.4},
+      {"name": "Social", "value": 14.8}
+    ],
+    "age": [
+      {"name": "18-24 years", "value": 37.6},
+      {"name": "25-34 years", "value": 32.9},
+      {"name": "35-44 years", "value": 18.6},
+      {"name": "45+ years", "value": 10.9}
+    ],
+    "gender": [
+      {"name": "Female", "value": 62.7},
+      {"name": "Male", "value": 37.3}
+    ]
+  }
+}

@@ -1,0 +1,3678 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "generated_at": "2026-05-20T10:43:02.926784+00:00",
+    "model_type": "sklearn.tree.DecisionTreeClassifier",
+    "target": "product_type",
+    "features": [
+      "city_level",
+      "age_group",
+      "gender",
+      "motive",
+      "scenario",
+      "budget_band"
+    ],
+    "classes": [
+      "Fruit Tea",
+      "Light Milk Tea",
+      "Low-Sugar Tea Drinks",
+      "Milk Tea / Cheese Foam / Others",
+      "Oat Milk Tea"
+    ],
+    "feature_values": {
+      "city_level": [
+        "1st-tier",
+        "2nd-tier",
+        "3rd-tier"
+      ],
+      "age_group": [
+        "18-24",
+        "25-34",
+        "35-44",
+        "Over 45"
+      ],
+      "gender": [
+        "female",
+        "male"
+      ],
+      "motive": [
+        "Quality",
+        "Novelty",
+        "Social"
+      ],
+      "scenario": [
+        "Delivery",
+        "Dine-in",
+        "Pick-up"
+      ],
+      "budget_band": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "training_samples": 31800,
+    "model_config": {
+      "criterion": "gini",
+      "max_depth": 5,
+      "min_samples_leaf": 60,
+      "max_leaf_nodes": 18,
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "evaluation": {
+      "test_size": 0.25,
+      "train_samples": 23850,
+      "test_samples": 7950,
+      "classes": [
+        "Fruit Tea",
+        "Light Milk Tea",
+        "Low-Sugar Tea Drinks",
+        "Milk Tea / Cheese Foam / Others",
+        "Oat Milk Tea"
+      ],
+      "train_accuracy": 0.202306,
+      "test_accuracy": 0.185031,
+      "balanced_test_accuracy": 0.20207,
+      "majority_class": "Low-Sugar Tea Drinks",
+      "majority_baseline_accuracy": 0.282013,
+      "beats_majority_baseline": false,
+      "classification_report": {
+        "Fruit Tea": {
+          "precision": 0.23849765258215963,
+          "recall": 0.25669530065689744,
+          "f1-score": 0.24726210756875153,
+          "support": 1979.0
+        },
+        "Light Milk Tea": {
+          "precision": 0.22156862745098038,
+          "recall": 0.06449771689497717,
+          "f1-score": 0.09991158267020336,
+          "support": 1752.0
+        },
+        "Low-Sugar Tea Drinks": {
+          "precision": 0.31165741475019826,
+          "recall": 0.17528991971454058,
+          "f1-score": 0.2243791036254639,
+          "support": 2242.0
+        },
+        "Milk Tea / Cheese Foam / Others": {
+          "precision": 0.07113985448666128,
+          "recall": 0.31597845601436264,
+          "f1-score": 0.116133289343451,
+          "support": 557.0
+        },
+        "Oat Milk Tea": {
+          "precision": 0.1784126984126984,
+          "recall": 0.19788732394366196,
+          "f1-score": 0.18764607679465775,
+          "support": 1420.0
+        },
+        "accuracy": 0.1850314465408805,
+        "macro avg": {
+          "precision": 0.2042552495365396,
+          "recall": 0.20206974344488798,
+          "f1-score": 0.1750664320005055,
+          "support": 7950.0
+        },
+        "weighted avg": {
+          "precision": 0.23294112507160478,
+          "recall": 0.1850314465408805,
+          "f1-score": 0.18850043085003296,
+          "support": 7950.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Fruit Tea",
+          "Light Milk Tea",
+          "Low-Sugar Tea Drinks",
+          "Milk Tea / Cheese Foam / Others",
+          "Oat Milk Tea"
+        ],
+        "matrix": [
+          [
+            508,
+            129,
+            281,
+            674,
+            387
+          ],
+          [
+            485,
+            113,
+            289,
+            520,
+            345
+          ],
+          [
+            572,
+            135,
+            393,
+            674,
+            468
+          ],
+          [
+            164,
+            41,
+            82,
+            176,
+            94
+          ],
+          [
+            401,
+            92,
+            216,
+            430,
+            281
+          ]
+        ]
+      }
+    },
+    "leaf_diagnostics": {
+      "leaf_count": 18,
+      "unique_leaf_predictions": [
+        "Fruit Tea",
+        "Light Milk Tea",
+        "Low-Sugar Tea Drinks",
+        "Milk Tea / Cheese Foam / Others",
+        "Oat Milk Tea"
+      ],
+      "observed_unique_leaf_predictions": [
+        "Fruit Tea",
+        "Light Milk Tea",
+        "Low-Sugar Tea Drinks"
+      ],
+      "all_leaves_same_prediction": false,
+      "leaf_prediction_counts": {
+        "Milk Tea / Cheese Foam / Others": 7,
+        "Oat Milk Tea": 6,
+        "Fruit Tea": 1,
+        "Low-Sugar Tea Drinks": 2,
+        "Light Milk Tea": 2
+      },
+      "observed_leaf_prediction_counts": {
+        "Low-Sugar Tea Drinks": 15,
+        "Light Milk Tea": 1,
+        "Fruit Tea": 2
+      },
+      "leaf_samples_by_prediction": {
+        "Milk Tea / Cheese Foam / Others": 14315,
+        "Oat Milk Tea": 8908,
+        "Fruit Tea": 2898,
+        "Low-Sugar Tea Drinks": 3211,
+        "Light Milk Tea": 2468
+      },
+      "dominant_share": {
+        "min": 0.207779,
+        "max": 0.303554,
+        "mean": 0.231024
+      }
+    },
+    "budget_band_definition": {
+      "Low": "order_amount < 25",
+      "Medium": "25 <= order_amount < 50",
+      "High": "order_amount >= 50"
+    },
+    "branch_logic": {
+      "yes": "selected feature value equals the condition value",
+      "no": "selected feature value does not equal the condition value"
+    },
+    "note": "This balanced decision tree is intended for exploratory visualization of consumer behavior patterns. The field 'prediction' is the model's balanced suggestion, while 'class_distribution' shows the real observed product-type distribution inside each node. It should not be interpreted as a high-accuracy predictor."
+  },
+  "root": {
+    "id": 0,
+    "type": "split",
+    "depth": 0,
+    "prediction": "Light Milk Tea",
+    "dominant_share": 0.2,
+    "model_prediction": "Light Milk Tea",
+    "model_dominant_share": 0.2,
+    "model_class_distribution": {
+      "Fruit Tea": 0.2,
+      "Light Milk Tea": 0.2,
+      "Low-Sugar Tea Drinks": 0.2,
+      "Milk Tea / Cheese Foam / Others": 0.2,
+      "Oat Milk Tea": 0.2
+    },
+    "samples": 31800,
+    "observed_prediction": "Low-Sugar Tea Drinks",
+    "observed_dominant_share": 0.282013,
+    "class_counts": {
+      "Fruit Tea": 7918,
+      "Light Milk Tea": 7008,
+      "Low-Sugar Tea Drinks": 8968,
+      "Milk Tea / Cheese Foam / Others": 2227,
+      "Oat Milk Tea": 5679
+    },
+    "class_distribution": {
+      "Fruit Tea": 0.248994,
+      "Light Milk Tea": 0.220377,
+      "Low-Sugar Tea Drinks": 0.282013,
+      "Milk Tea / Cheese Foam / Others": 0.070031,
+      "Oat Milk Tea": 0.178585
+    },
+    "top_brands": [
+      {
+        "brand": "奈雪",
+        "count": 5426,
+        "share": 0.170629
+      },
+      {
+        "brand": "喜茶",
+        "count": 5426,
+        "share": 0.170629
+      },
+      {
+        "brand": "茶百道",
+        "count": 5382,
+        "share": 0.169245
+      },
+      {
+        "brand": "古茗",
+        "count": 5380,
+        "share": 0.169182
+      },
+      {
+        "brand": "蜜雪冰城",
+        "count": 5301,
+        "share": 0.166698
+      }
+    ],
+    "average_order_amount": 42.86,
+    "question": "Age group = 18-24?",
+    "condition": {
+      "feature": "age_group",
+      "operator": "equals",
+      "value": "18-24",
+      "encoded_feature": "age_group=18-24",
+      "threshold": 0.5
+    },
+    "children": [
+      {
+        "id": 1,
+        "type": "split",
+        "depth": 1,
+        "prediction": "Oat Milk Tea",
+        "dominant_share": 0.203955,
+        "model_prediction": "Oat Milk Tea",
+        "model_dominant_share": 0.203955,
+        "model_class_distribution": {
+          "Fruit Tea": 0.199922,
+          "Light Milk Tea": 0.202483,
+          "Low-Sugar Tea Drinks": 0.201173,
+          "Milk Tea / Cheese Foam / Others": 0.192467,
+          "Oat Milk Tea": 0.203955
+        },
+        "samples": 19688,
+        "observed_prediction": "Low-Sugar Tea Drinks",
+        "observed_dominant_share": 0.282202,
+        "class_counts": {
+          "Fruit Tea": 4875,
+          "Light Milk Tea": 4370,
+          "Low-Sugar Tea Drinks": 5556,
+          "Milk Tea / Cheese Foam / Others": 1320,
+          "Oat Milk Tea": 3567
+        },
+        "class_distribution": {
+          "Fruit Tea": 0.247613,
+          "Light Milk Tea": 0.221963,
+          "Low-Sugar Tea Drinks": 0.282202,
+          "Milk Tea / Cheese Foam / Others": 0.067046,
+          "Oat Milk Tea": 0.181176
+        },
+        "top_brands": [
+          {
+            "brand": "茶百道",
+            "count": 3358,
+            "share": 0.170561
+          },
+          {
+            "brand": "古茗",
+            "count": 3347,
+            "share": 0.170002
+          },
+          {
+            "brand": "喜茶",
+            "count": 3331,
+            "share": 0.169189
+          },
+          {
+            "brand": "蜜雪冰城",
+            "count": 3323,
+            "share": 0.168783
+          },
+          {
+            "brand": "奈雪",
+            "count": 3319,
+            "share": 0.16858
+          }
+        ],
+        "average_order_amount": 42.95,
+        "question": "Scenario = Delivery?",
+        "condition": {
+          "feature": "scenario",
+          "operator": "equals",
+          "value": "Delivery",
+          "encoded_feature": "scenario=Delivery",
+          "threshold": 0.5
+        },
+        "children": [
+          {
+            "id": 3,
+            "type": "split",
+            "depth": 2,
+            "prediction": "Milk Tea / Cheese Foam / Others",
+            "dominant_share": 0.204718,
+            "model_prediction": "Milk Tea / Cheese Foam / Others",
+            "model_dominant_share": 0.204718,
+            "model_class_distribution": {
+              "Fruit Tea": 0.201758,
+              "Light Milk Tea": 0.201068,
+              "Low-Sugar Tea Drinks": 0.187872,
+              "Milk Tea / Cheese Foam / Others": 0.204718,
+              "Oat Milk Tea": 0.204584
+            },
+            "samples": 6864,
+            "observed_prediction": "Low-Sugar Tea Drinks",
+            "observed_dominant_share": 0.267045,
+            "class_counts": {
+              "Fruit Tea": 1738,
+              "Light Milk Tea": 1533,
+              "Low-Sugar Tea Drinks": 1833,
+              "Milk Tea / Cheese Foam / Others": 496,
+              "Oat Milk Tea": 1264
+            },
+            "class_distribution": {
+              "Fruit Tea": 0.253205,
+              "Light Milk Tea": 0.223339,
+              "Low-Sugar Tea Drinks": 0.267045,
+              "Milk Tea / Cheese Foam / Others": 0.072261,
+              "Oat Milk Tea": 0.184149
+            },
+            "top_brands": [
+              {
+                "brand": "蜜雪冰城",
+                "count": 1206,
+                "share": 0.175699
+              },
+              {
+                "brand": "喜茶",
+                "count": 1173,
+                "share": 0.170892
+              },
+              {
+                "brand": "茶百道",
+                "count": 1173,
+                "share": 0.170892
+              },
+              {
+                "brand": "奈雪",
+                "count": 1162,
+                "share": 0.169289
+              },
+              {
+                "brand": "古茗",
+                "count": 1103,
+                "share": 0.160693
+              }
+            ],
+            "average_order_amount": 42.85,
+            "question": "Budget = High?",
+            "condition": {
+              "feature": "budget_band",
+              "operator": "equals",
+              "value": "High",
+              "encoded_feature": "budget_band=High",
+              "threshold": 0.5
+            },
+            "children": [
+              {
+                "id": 5,
+                "type": "leaf",
+                "depth": 3,
+                "prediction": "Milk Tea / Cheese Foam / Others",
+                "dominant_share": 0.222095,
+                "model_prediction": "Milk Tea / Cheese Foam / Others",
+                "model_dominant_share": 0.222095,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.200595,
+                  "Light Milk Tea": 0.196623,
+                  "Low-Sugar Tea Drinks": 0.182702,
+                  "Milk Tea / Cheese Foam / Others": 0.222095,
+                  "Oat Milk Tea": 0.197985
+                },
+                "samples": 4467,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.263264,
+                "class_counts": {
+                  "Fruit Tea": 1140,
+                  "Light Milk Tea": 989,
+                  "Low-Sugar Tea Drinks": 1176,
+                  "Milk Tea / Cheese Foam / Others": 355,
+                  "Oat Milk Tea": 807
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.255205,
+                  "Light Milk Tea": 0.221401,
+                  "Low-Sugar Tea Drinks": 0.263264,
+                  "Milk Tea / Cheese Foam / Others": 0.079472,
+                  "Oat Milk Tea": 0.180658
+                },
+                "top_brands": [
+                  {
+                    "brand": "茶百道",
+                    "count": 783,
+                    "share": 0.175285
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 767,
+                    "share": 0.171704
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 760,
+                    "share": 0.170137
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 746,
+                    "share": 0.167002
+                  },
+                  {
+                    "brand": "古茗",
+                    "count": 725,
+                    "share": 0.162301
+                  }
+                ],
+                "average_order_amount": 27.81,
+                "branch": "no",
+                "branch_label": "No"
+              },
+              {
+                "id": 6,
+                "type": "split",
+                "depth": 3,
+                "prediction": "Oat Milk Tea",
+                "dominant_share": 0.217377,
+                "model_prediction": "Oat Milk Tea",
+                "model_dominant_share": 0.217377,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.204011,
+                  "Light Milk Tea": 0.209688,
+                  "Low-Sugar Tea Drinks": 0.197896,
+                  "Milk Tea / Cheese Foam / Others": 0.171028,
+                  "Oat Milk Tea": 0.217377
+                },
+                "samples": 2397,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.274093,
+                "class_counts": {
+                  "Fruit Tea": 598,
+                  "Light Milk Tea": 544,
+                  "Low-Sugar Tea Drinks": 657,
+                  "Milk Tea / Cheese Foam / Others": 141,
+                  "Oat Milk Tea": 457
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.249479,
+                  "Light Milk Tea": 0.22695,
+                  "Low-Sugar Tea Drinks": 0.274093,
+                  "Milk Tea / Cheese Foam / Others": 0.058824,
+                  "Oat Milk Tea": 0.190655
+                },
+                "top_brands": [
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 439,
+                    "share": 0.183146
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 427,
+                    "share": 0.178139
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 402,
+                    "share": 0.16771
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 390,
+                    "share": 0.162703
+                  },
+                  {
+                    "brand": "古茗",
+                    "count": 378,
+                    "share": 0.157697
+                  }
+                ],
+                "average_order_amount": 70.87,
+                "question": "Motive = Social?",
+                "condition": {
+                  "feature": "motive",
+                  "operator": "equals",
+                  "value": "Social",
+                  "encoded_feature": "motive=Social",
+                  "threshold": 0.5
+                },
+                "children": [
+                  {
+                    "id": 15,
+                    "type": "leaf",
+                    "depth": 4,
+                    "prediction": "Oat Milk Tea",
+                    "dominant_share": 0.217438,
+                    "model_prediction": "Oat Milk Tea",
+                    "model_dominant_share": 0.217438,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.205759,
+                      "Light Milk Tea": 0.209875,
+                      "Low-Sugar Tea Drinks": 0.20726,
+                      "Milk Tea / Cheese Foam / Others": 0.159667,
+                      "Oat Milk Tea": 0.217438
+                    },
+                    "samples": 2026,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.28381,
+                    "class_counts": {
+                      "Fruit Tea": 504,
+                      "Light Milk Tea": 455,
+                      "Low-Sugar Tea Drinks": 575,
+                      "Milk Tea / Cheese Foam / Others": 110,
+                      "Oat Milk Tea": 382
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.248766,
+                      "Light Milk Tea": 0.22458,
+                      "Low-Sugar Tea Drinks": 0.28381,
+                      "Milk Tea / Cheese Foam / Others": 0.054294,
+                      "Oat Milk Tea": 0.188549
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 377,
+                        "share": 0.186081
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 355,
+                        "share": 0.175222
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 341,
+                        "share": 0.168312
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 335,
+                        "share": 0.16535
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 318,
+                        "share": 0.15696
+                      }
+                    ],
+                    "average_order_amount": 70.77,
+                    "branch": "no",
+                    "branch_label": "No"
+                  },
+                  {
+                    "id": 16,
+                    "type": "split",
+                    "depth": 4,
+                    "prediction": "Milk Tea / Cheese Foam / Others",
+                    "dominant_share": 0.228792,
+                    "model_prediction": "Milk Tea / Cheese Foam / Others",
+                    "model_dominant_share": 0.228792,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.195124,
+                      "Light Milk Tea": 0.208735,
+                      "Low-Sugar Tea Drinks": 0.150285,
+                      "Milk Tea / Cheese Foam / Others": 0.228792,
+                      "Oat Milk Tea": 0.217064
+                    },
+                    "samples": 371,
+                    "observed_prediction": "Fruit Tea",
+                    "observed_dominant_share": 0.253369,
+                    "class_counts": {
+                      "Fruit Tea": 94,
+                      "Light Milk Tea": 89,
+                      "Low-Sugar Tea Drinks": 82,
+                      "Milk Tea / Cheese Foam / Others": 31,
+                      "Oat Milk Tea": 75
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.253369,
+                      "Light Milk Tea": 0.239892,
+                      "Low-Sugar Tea Drinks": 0.221024,
+                      "Milk Tea / Cheese Foam / Others": 0.083558,
+                      "Oat Milk Tea": 0.202156
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "喜茶",
+                        "count": 72,
+                        "share": 0.19407
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 62,
+                        "share": 0.167116
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 61,
+                        "share": 0.16442
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 60,
+                        "share": 0.161725
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 55,
+                        "share": 0.148248
+                      }
+                    ],
+                    "average_order_amount": 71.42,
+                    "question": "Scenario = Pick-up?",
+                    "condition": {
+                      "feature": "scenario",
+                      "operator": "equals",
+                      "value": "Pick-up",
+                      "encoded_feature": "scenario=Pick-up",
+                      "threshold": 0.5
+                    },
+                    "children": [
+                      {
+                        "id": 21,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Milk Tea / Cheese Foam / Others",
+                        "dominant_share": 0.244821,
+                        "model_prediction": "Milk Tea / Cheese Foam / Others",
+                        "model_dominant_share": 0.244821,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.18649,
+                          "Light Milk Tea": 0.230156,
+                          "Low-Sugar Tea Drinks": 0.154523,
+                          "Milk Tea / Cheese Foam / Others": 0.244821,
+                          "Oat Milk Tea": 0.184011
+                        },
+                        "samples": 267,
+                        "observed_prediction": "Light Milk Tea",
+                        "observed_dominant_share": 0.265918,
+                        "class_counts": {
+                          "Fruit Tea": 65,
+                          "Light Milk Tea": 71,
+                          "Low-Sugar Tea Drinks": 61,
+                          "Milk Tea / Cheese Foam / Others": 24,
+                          "Oat Milk Tea": 46
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.243446,
+                          "Light Milk Tea": 0.265918,
+                          "Low-Sugar Tea Drinks": 0.228464,
+                          "Milk Tea / Cheese Foam / Others": 0.089888,
+                          "Oat Milk Tea": 0.172285
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "喜茶",
+                            "count": 55,
+                            "share": 0.205993
+                          },
+                          {
+                            "brand": "古茗",
+                            "count": 45,
+                            "share": 0.168539
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 43,
+                            "share": 0.161049
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 41,
+                            "share": 0.153558
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 37,
+                            "share": 0.138577
+                          }
+                        ],
+                        "average_order_amount": 72.28,
+                        "branch": "no",
+                        "branch_label": "No"
+                      },
+                      {
+                        "id": 22,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Oat Milk Tea",
+                        "dominant_share": 0.303554,
+                        "model_prediction": "Oat Milk Tea",
+                        "model_dominant_share": 0.303554,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.217717,
+                          "Light Milk Tea": 0.152682,
+                          "Low-Sugar Tea Drinks": 0.139198,
+                          "Milk Tea / Cheese Foam / Others": 0.186848,
+                          "Oat Milk Tea": 0.303554
+                        },
+                        "samples": 104,
+                        "observed_prediction": "Fruit Tea",
+                        "observed_dominant_share": 0.278846,
+                        "class_counts": {
+                          "Fruit Tea": 29,
+                          "Light Milk Tea": 18,
+                          "Low-Sugar Tea Drinks": 21,
+                          "Milk Tea / Cheese Foam / Others": 7,
+                          "Oat Milk Tea": 29
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.278846,
+                          "Light Milk Tea": 0.173077,
+                          "Low-Sugar Tea Drinks": 0.201923,
+                          "Milk Tea / Cheese Foam / Others": 0.067308,
+                          "Oat Milk Tea": 0.278846
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 25,
+                            "share": 0.240385
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 18,
+                            "share": 0.173077
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 17,
+                            "share": 0.163462
+                          },
+                          {
+                            "brand": "古茗",
+                            "count": 15,
+                            "share": 0.144231
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 14,
+                            "share": 0.134615
+                          }
+                        ],
+                        "average_order_amount": 69.22,
+                        "branch": "yes",
+                        "branch_label": "Yes"
+                      }
+                    ],
+                    "branch": "yes",
+                    "branch_label": "Yes"
+                  }
+                ],
+                "branch": "yes",
+                "branch_label": "Yes"
+              }
+            ],
+            "branch": "no",
+            "branch_label": "No"
+          },
+          {
+            "id": 4,
+            "type": "split",
+            "depth": 2,
+            "prediction": "Low-Sugar Tea Drinks",
+            "dominant_share": 0.208438,
+            "model_prediction": "Low-Sugar Tea Drinks",
+            "model_dominant_share": 0.208438,
+            "model_class_distribution": {
+              "Fruit Tea": 0.19892,
+              "Light Milk Tea": 0.203257,
+              "Low-Sugar Tea Drinks": 0.208438,
+              "Milk Tea / Cheese Foam / Others": 0.185775,
+              "Oat Milk Tea": 0.203611
+            },
+            "samples": 12824,
+            "observed_prediction": "Low-Sugar Tea Drinks",
+            "observed_dominant_share": 0.290315,
+            "class_counts": {
+              "Fruit Tea": 3137,
+              "Light Milk Tea": 2837,
+              "Low-Sugar Tea Drinks": 3723,
+              "Milk Tea / Cheese Foam / Others": 824,
+              "Oat Milk Tea": 2303
+            },
+            "class_distribution": {
+              "Fruit Tea": 0.244619,
+              "Light Milk Tea": 0.221226,
+              "Low-Sugar Tea Drinks": 0.290315,
+              "Milk Tea / Cheese Foam / Others": 0.064255,
+              "Oat Milk Tea": 0.179585
+            },
+            "top_brands": [
+              {
+                "brand": "古茗",
+                "count": 2244,
+                "share": 0.174984
+              },
+              {
+                "brand": "茶百道",
+                "count": 2185,
+                "share": 0.170384
+              },
+              {
+                "brand": "喜茶",
+                "count": 2158,
+                "share": 0.168278
+              },
+              {
+                "brand": "奈雪",
+                "count": 2157,
+                "share": 0.1682
+              },
+              {
+                "brand": "蜜雪冰城",
+                "count": 2117,
+                "share": 0.165081
+              }
+            ],
+            "average_order_amount": 43.0,
+            "question": "City tier = 1st-tier?",
+            "condition": {
+              "feature": "city_level",
+              "operator": "equals",
+              "value": "1st-tier",
+              "encoded_feature": "city_level=1st-tier",
+              "threshold": 0.5
+            },
+            "children": [
+              {
+                "id": 7,
+                "type": "split",
+                "depth": 3,
+                "prediction": "Low-Sugar Tea Drinks",
+                "dominant_share": 0.209274,
+                "model_prediction": "Low-Sugar Tea Drinks",
+                "model_dominant_share": 0.209274,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.201297,
+                  "Light Milk Tea": 0.198774,
+                  "Low-Sugar Tea Drinks": 0.209274,
+                  "Milk Tea / Cheese Foam / Others": 0.194503,
+                  "Oat Milk Tea": 0.196152
+                },
+                "samples": 8362,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.292753,
+                "class_counts": {
+                  "Fruit Tea": 2079,
+                  "Light Milk Tea": 1817,
+                  "Low-Sugar Tea Drinks": 2448,
+                  "Milk Tea / Cheese Foam / Others": 565,
+                  "Oat Milk Tea": 1453
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.248625,
+                  "Light Milk Tea": 0.217293,
+                  "Low-Sugar Tea Drinks": 0.292753,
+                  "Milk Tea / Cheese Foam / Others": 0.067568,
+                  "Oat Milk Tea": 0.173762
+                },
+                "top_brands": [
+                  {
+                    "brand": "古茗",
+                    "count": 1457,
+                    "share": 0.174241
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 1429,
+                    "share": 0.170892
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 1424,
+                    "share": 0.170294
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 1410,
+                    "share": 0.16862
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 1384,
+                    "share": 0.165511
+                  }
+                ],
+                "average_order_amount": 42.9,
+                "question": "Budget = Medium?",
+                "condition": {
+                  "feature": "budget_band",
+                  "operator": "equals",
+                  "value": "Medium",
+                  "encoded_feature": "budget_band=Medium",
+                  "threshold": 0.5
+                },
+                "children": [
+                  {
+                    "id": 9,
+                    "type": "split",
+                    "depth": 4,
+                    "prediction": "Fruit Tea",
+                    "dominant_share": 0.208064,
+                    "model_prediction": "Fruit Tea",
+                    "model_dominant_share": 0.208064,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.208064,
+                      "Light Milk Tea": 0.199278,
+                      "Low-Sugar Tea Drinks": 0.204721,
+                      "Milk Tea / Cheese Foam / Others": 0.202802,
+                      "Oat Milk Tea": 0.185135
+                    },
+                    "samples": 5215,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.287632,
+                    "class_counts": {
+                      "Fruit Tea": 1346,
+                      "Light Milk Tea": 1141,
+                      "Low-Sugar Tea Drinks": 1500,
+                      "Milk Tea / Cheese Foam / Others": 369,
+                      "Oat Milk Tea": 859
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.258102,
+                      "Light Milk Tea": 0.218792,
+                      "Low-Sugar Tea Drinks": 0.287632,
+                      "Milk Tea / Cheese Foam / Others": 0.070757,
+                      "Oat Milk Tea": 0.164717
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "茶百道",
+                        "count": 911,
+                        "share": 0.174688
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 900,
+                        "share": 0.172579
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 888,
+                        "share": 0.170278
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 875,
+                        "share": 0.167785
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 872,
+                        "share": 0.16721
+                      }
+                    ],
+                    "average_order_amount": 47.64,
+                    "question": "Motive = Quality?",
+                    "condition": {
+                      "feature": "motive",
+                      "operator": "equals",
+                      "value": "Quality",
+                      "encoded_feature": "motive=Quality",
+                      "threshold": 0.5
+                    },
+                    "children": [
+                      {
+                        "id": 11,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Fruit Tea",
+                        "dominant_share": 0.215038,
+                        "model_prediction": "Fruit Tea",
+                        "model_dominant_share": 0.215038,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.215038,
+                          "Light Milk Tea": 0.202307,
+                          "Low-Sugar Tea Drinks": 0.212123,
+                          "Milk Tea / Cheese Foam / Others": 0.181318,
+                          "Oat Milk Tea": 0.189214
+                        },
+                        "samples": 2898,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.292616,
+                        "class_counts": {
+                          "Fruit Tea": 759,
+                          "Light Milk Tea": 632,
+                          "Low-Sugar Tea Drinks": 848,
+                          "Milk Tea / Cheese Foam / Others": 180,
+                          "Oat Milk Tea": 479
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.261905,
+                          "Light Milk Tea": 0.218081,
+                          "Low-Sugar Tea Drinks": 0.292616,
+                          "Milk Tea / Cheese Foam / Others": 0.062112,
+                          "Oat Milk Tea": 0.165286
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "奈雪",
+                            "count": 513,
+                            "share": 0.177019
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 509,
+                            "share": 0.175638
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 509,
+                            "share": 0.175638
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 485,
+                            "share": 0.167357
+                          },
+                          {
+                            "brand": "古茗",
+                            "count": 466,
+                            "share": 0.160801
+                          }
+                        ],
+                        "average_order_amount": 48.55,
+                        "branch": "no",
+                        "branch_label": "No"
+                      },
+                      {
+                        "id": 12,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Milk Tea / Cheese Foam / Others",
+                        "dominant_share": 0.2286,
+                        "model_prediction": "Milk Tea / Cheese Foam / Others",
+                        "model_dominant_share": 0.2286,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.19969,
+                          "Light Milk Tea": 0.19564,
+                          "Low-Sugar Tea Drinks": 0.195833,
+                          "Milk Tea / Cheese Foam / Others": 0.2286,
+                          "Oat Milk Tea": 0.180238
+                        },
+                        "samples": 2317,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.281398,
+                        "class_counts": {
+                          "Fruit Tea": 587,
+                          "Light Milk Tea": 509,
+                          "Low-Sugar Tea Drinks": 652,
+                          "Milk Tea / Cheese Foam / Others": 189,
+                          "Oat Milk Tea": 380
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.253345,
+                          "Light Milk Tea": 0.219681,
+                          "Low-Sugar Tea Drinks": 0.281398,
+                          "Milk Tea / Cheese Foam / Others": 0.081571,
+                          "Oat Milk Tea": 0.164005
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 406,
+                            "share": 0.175227
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 403,
+                            "share": 0.173932
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 402,
+                            "share": 0.1735
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 391,
+                            "share": 0.168753
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 362,
+                            "share": 0.156237
+                          }
+                        ],
+                        "average_order_amount": 46.49,
+                        "branch": "yes",
+                        "branch_label": "Yes"
+                      }
+                    ],
+                    "branch": "no",
+                    "branch_label": "No"
+                  },
+                  {
+                    "id": 10,
+                    "type": "split",
+                    "depth": 4,
+                    "prediction": "Low-Sugar Tea Drinks",
+                    "dominant_share": 0.216906,
+                    "model_prediction": "Low-Sugar Tea Drinks",
+                    "model_dominant_share": 0.216906,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.189953,
+                      "Light Milk Tea": 0.19793,
+                      "Low-Sugar Tea Drinks": 0.216906,
+                      "Milk Tea / Cheese Foam / Others": 0.18059,
+                      "Oat Milk Tea": 0.214621
+                    },
+                    "samples": 3147,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.301239,
+                    "class_counts": {
+                      "Fruit Tea": 733,
+                      "Light Milk Tea": 676,
+                      "Low-Sugar Tea Drinks": 948,
+                      "Milk Tea / Cheese Foam / Others": 196,
+                      "Oat Milk Tea": 594
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.23292,
+                      "Light Milk Tea": 0.214808,
+                      "Low-Sugar Tea Drinks": 0.301239,
+                      "Milk Tea / Cheese Foam / Others": 0.062282,
+                      "Oat Milk Tea": 0.188751
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "古茗",
+                        "count": 585,
+                        "share": 0.185891
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 549,
+                        "share": 0.174452
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 522,
+                        "share": 0.165872
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 518,
+                        "share": 0.164601
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 484,
+                        "share": 0.153797
+                      }
+                    ],
+                    "average_order_amount": 35.04,
+                    "question": "Age group = Over 45?",
+                    "condition": {
+                      "feature": "age_group",
+                      "operator": "equals",
+                      "value": "Over 45",
+                      "encoded_feature": "age_group=Over 45",
+                      "threshold": 0.5
+                    },
+                    "children": [
+                      {
+                        "id": 19,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Low-Sugar Tea Drinks",
+                        "dominant_share": 0.223245,
+                        "model_prediction": "Low-Sugar Tea Drinks",
+                        "model_dominant_share": 0.223245,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.188429,
+                          "Light Milk Tea": 0.199431,
+                          "Low-Sugar Tea Drinks": 0.223245,
+                          "Milk Tea / Cheese Foam / Others": 0.170637,
+                          "Oat Milk Tea": 0.218259
+                        },
+                        "samples": 2553,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.307481,
+                        "class_counts": {
+                          "Fruit Tea": 585,
+                          "Light Milk Tea": 548,
+                          "Low-Sugar Tea Drinks": 785,
+                          "Milk Tea / Cheese Foam / Others": 149,
+                          "Oat Milk Tea": 486
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.229142,
+                          "Light Milk Tea": 0.214649,
+                          "Low-Sugar Tea Drinks": 0.307481,
+                          "Milk Tea / Cheese Foam / Others": 0.058363,
+                          "Oat Milk Tea": 0.190364
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 470,
+                            "share": 0.184097
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 445,
+                            "share": 0.174305
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 424,
+                            "share": 0.166079
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 411,
+                            "share": 0.160987
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 406,
+                            "share": 0.159029
+                          }
+                        ],
+                        "average_order_amount": 35.0,
+                        "branch": "no",
+                        "branch_label": "No"
+                      },
+                      {
+                        "id": 20,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Milk Tea / Cheese Foam / Others",
+                        "dominant_share": 0.221561,
+                        "model_prediction": "Milk Tea / Cheese Foam / Others",
+                        "model_dominant_share": 0.221561,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.196228,
+                          "Light Milk Tea": 0.191748,
+                          "Low-Sugar Tea Drinks": 0.190813,
+                          "Milk Tea / Cheese Foam / Others": 0.221561,
+                          "Oat Milk Tea": 0.199649
+                        },
+                        "samples": 594,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.274411,
+                        "class_counts": {
+                          "Fruit Tea": 148,
+                          "Light Milk Tea": 128,
+                          "Low-Sugar Tea Drinks": 163,
+                          "Milk Tea / Cheese Foam / Others": 47,
+                          "Oat Milk Tea": 108
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.249158,
+                          "Light Milk Tea": 0.215488,
+                          "Low-Sugar Tea Drinks": 0.274411,
+                          "Milk Tea / Cheese Foam / Others": 0.079125,
+                          "Oat Milk Tea": 0.181818
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 115,
+                            "share": 0.193603
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 107,
+                            "share": 0.180135
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 104,
+                            "share": 0.175084
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 98,
+                            "share": 0.164983
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 78,
+                            "share": 0.131313
+                          }
+                        ],
+                        "average_order_amount": 35.2,
+                        "branch": "yes",
+                        "branch_label": "Yes"
+                      }
+                    ],
+                    "branch": "yes",
+                    "branch_label": "Yes"
+                  }
+                ],
+                "branch": "no",
+                "branch_label": "No"
+              },
+              {
+                "id": 8,
+                "type": "split",
+                "depth": 3,
+                "prediction": "Oat Milk Tea",
+                "dominant_share": 0.217767,
+                "model_prediction": "Oat Milk Tea",
+                "model_dominant_share": 0.217767,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.194408,
+                  "Light Milk Tea": 0.211763,
+                  "Low-Sugar Tea Drinks": 0.206852,
+                  "Milk Tea / Cheese Foam / Others": 0.169209,
+                  "Oat Milk Tea": 0.217767
+                },
+                "samples": 4462,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.285746,
+                "class_counts": {
+                  "Fruit Tea": 1058,
+                  "Light Milk Tea": 1020,
+                  "Low-Sugar Tea Drinks": 1275,
+                  "Milk Tea / Cheese Foam / Others": 259,
+                  "Oat Milk Tea": 850
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.237113,
+                  "Light Milk Tea": 0.228597,
+                  "Low-Sugar Tea Drinks": 0.285746,
+                  "Milk Tea / Cheese Foam / Others": 0.058046,
+                  "Oat Milk Tea": 0.190498
+                },
+                "top_brands": [
+                  {
+                    "brand": "古茗",
+                    "count": 787,
+                    "share": 0.176378
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 756,
+                    "share": 0.169431
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 748,
+                    "share": 0.167638
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 733,
+                    "share": 0.164276
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 733,
+                    "share": 0.164276
+                  }
+                ],
+                "average_order_amount": 43.2,
+                "question": "Budget = High?",
+                "condition": {
+                  "feature": "budget_band",
+                  "operator": "equals",
+                  "value": "High",
+                  "encoded_feature": "budget_band=High",
+                  "threshold": 0.5
+                },
+                "children": [
+                  {
+                    "id": 13,
+                    "type": "split",
+                    "depth": 4,
+                    "prediction": "Oat Milk Tea",
+                    "dominant_share": 0.23404,
+                    "model_prediction": "Oat Milk Tea",
+                    "model_dominant_share": 0.23404,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.18909,
+                      "Light Milk Tea": 0.204369,
+                      "Low-Sugar Tea Drinks": 0.206439,
+                      "Milk Tea / Cheese Foam / Others": 0.166062,
+                      "Oat Milk Tea": 0.23404
+                    },
+                    "samples": 2891,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.285714,
+                    "class_counts": {
+                      "Fruit Tea": 668,
+                      "Light Milk Tea": 639,
+                      "Low-Sugar Tea Drinks": 826,
+                      "Milk Tea / Cheese Foam / Others": 165,
+                      "Oat Milk Tea": 593
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.231062,
+                      "Light Milk Tea": 0.221031,
+                      "Low-Sugar Tea Drinks": 0.285714,
+                      "Milk Tea / Cheese Foam / Others": 0.057074,
+                      "Oat Milk Tea": 0.205119
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "古茗",
+                        "count": 494,
+                        "share": 0.170875
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 488,
+                        "share": 0.1688
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 487,
+                        "share": 0.168454
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 483,
+                        "share": 0.16707
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 476,
+                        "share": 0.164649
+                      }
+                    ],
+                    "average_order_amount": 27.69,
+                    "question": "Motive = Quality?",
+                    "condition": {
+                      "feature": "motive",
+                      "operator": "equals",
+                      "value": "Quality",
+                      "encoded_feature": "motive=Quality",
+                      "threshold": 0.5
+                    },
+                    "children": [
+                      {
+                        "id": 17,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Oat Milk Tea",
+                        "dominant_share": 0.236079,
+                        "model_prediction": "Oat Milk Tea",
+                        "model_dominant_share": 0.236079,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.192135,
+                          "Light Milk Tea": 0.187872,
+                          "Low-Sugar Tea Drinks": 0.201866,
+                          "Milk Tea / Cheese Foam / Others": 0.182047,
+                          "Oat Milk Tea": 0.236079
+                        },
+                        "samples": 1593,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.283114,
+                        "class_counts": {
+                          "Fruit Tea": 379,
+                          "Light Milk Tea": 328,
+                          "Low-Sugar Tea Drinks": 451,
+                          "Milk Tea / Cheese Foam / Others": 101,
+                          "Oat Milk Tea": 334
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.237916,
+                          "Light Milk Tea": 0.205901,
+                          "Low-Sugar Tea Drinks": 0.283114,
+                          "Milk Tea / Cheese Foam / Others": 0.063402,
+                          "Oat Milk Tea": 0.209667
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "茶百道",
+                            "count": 274,
+                            "share": 0.172003
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 271,
+                            "share": 0.170119
+                          },
+                          {
+                            "brand": "古茗",
+                            "count": 267,
+                            "share": 0.167608
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 264,
+                            "share": 0.165725
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 258,
+                            "share": 0.161959
+                          }
+                        ],
+                        "average_order_amount": 28.01,
+                        "branch": "no",
+                        "branch_label": "No"
+                      },
+                      {
+                        "id": 18,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Oat Milk Tea",
+                        "dominant_share": 0.231462,
+                        "model_prediction": "Oat Milk Tea",
+                        "model_dominant_share": 0.231462,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.18524,
+                          "Light Milk Tea": 0.225226,
+                          "Low-Sugar Tea Drinks": 0.212221,
+                          "Milk Tea / Cheese Foam / Others": 0.145852,
+                          "Oat Milk Tea": 0.231462
+                        },
+                        "samples": 1298,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.288906,
+                        "class_counts": {
+                          "Fruit Tea": 289,
+                          "Light Milk Tea": 311,
+                          "Low-Sugar Tea Drinks": 375,
+                          "Milk Tea / Cheese Foam / Others": 64,
+                          "Oat Milk Tea": 259
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.22265,
+                          "Light Milk Tea": 0.239599,
+                          "Low-Sugar Tea Drinks": 0.288906,
+                          "Milk Tea / Cheese Foam / Others": 0.049307,
+                          "Oat Milk Tea": 0.199538
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 227,
+                            "share": 0.174884
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 225,
+                            "share": 0.173344
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 217,
+                            "share": 0.16718
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 213,
+                            "share": 0.164099
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 212,
+                            "share": 0.163328
+                          }
+                        ],
+                        "average_order_amount": 27.3,
+                        "branch": "yes",
+                        "branch_label": "Yes"
+                      }
+                    ],
+                    "branch": "no",
+                    "branch_label": "No"
+                  },
+                  {
+                    "id": 14,
+                    "type": "split",
+                    "depth": 4,
+                    "prediction": "Light Milk Tea",
+                    "dominant_share": 0.225445,
+                    "model_prediction": "Light Milk Tea",
+                    "model_dominant_share": 0.225445,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.204248,
+                      "Light Milk Tea": 0.225445,
+                      "Low-Sugar Tea Drinks": 0.207616,
+                      "Milk Tea / Cheese Foam / Others": 0.175032,
+                      "Oat Milk Tea": 0.18766
+                    },
+                    "samples": 1571,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.285805,
+                    "class_counts": {
+                      "Fruit Tea": 390,
+                      "Light Milk Tea": 381,
+                      "Low-Sugar Tea Drinks": 449,
+                      "Milk Tea / Cheese Foam / Others": 94,
+                      "Oat Milk Tea": 257
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.24825,
+                      "Light Milk Tea": 0.242521,
+                      "Low-Sugar Tea Drinks": 0.285805,
+                      "Milk Tea / Cheese Foam / Others": 0.059835,
+                      "Oat Milk Tea": 0.16359
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "古茗",
+                        "count": 293,
+                        "share": 0.186505
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 269,
+                        "share": 0.171229
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 265,
+                        "share": 0.168682
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 257,
+                        "share": 0.16359
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 245,
+                        "share": 0.155952
+                      }
+                    ],
+                    "average_order_amount": 71.73,
+                    "question": "Age group = 25-34?",
+                    "condition": {
+                      "feature": "age_group",
+                      "operator": "equals",
+                      "value": "25-34",
+                      "encoded_feature": "age_group=25-34",
+                      "threshold": 0.5
+                    },
+                    "children": [
+                      {
+                        "id": 23,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Light Milk Tea",
+                        "dominant_share": 0.240505,
+                        "model_prediction": "Light Milk Tea",
+                        "model_dominant_share": 0.240505,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.218436,
+                          "Light Milk Tea": 0.240505,
+                          "Low-Sugar Tea Drinks": 0.202701,
+                          "Milk Tea / Cheese Foam / Others": 0.17831,
+                          "Oat Milk Tea": 0.160048
+                        },
+                        "samples": 741,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.278003,
+                        "class_counts": {
+                          "Fruit Tea": 196,
+                          "Light Milk Tea": 191,
+                          "Low-Sugar Tea Drinks": 206,
+                          "Milk Tea / Cheese Foam / Others": 45,
+                          "Oat Milk Tea": 103
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.264507,
+                          "Light Milk Tea": 0.25776,
+                          "Low-Sugar Tea Drinks": 0.278003,
+                          "Milk Tea / Cheese Foam / Others": 0.060729,
+                          "Oat Milk Tea": 0.139001
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 133,
+                            "share": 0.179487
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 130,
+                            "share": 0.175439
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 125,
+                            "share": 0.168691
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 124,
+                            "share": 0.167341
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 118,
+                            "share": 0.159244
+                          }
+                        ],
+                        "average_order_amount": 71.71,
+                        "branch": "no",
+                        "branch_label": "No"
+                      },
+                      {
+                        "id": 24,
+                        "type": "leaf",
+                        "depth": 5,
+                        "prediction": "Oat Milk Tea",
+                        "dominant_share": 0.212138,
+                        "model_prediction": "Oat Milk Tea",
+                        "model_dominant_share": 0.212138,
+                        "model_class_distribution": {
+                          "Fruit Tea": 0.19167,
+                          "Light Milk Tea": 0.212094,
+                          "Low-Sugar Tea Drinks": 0.211973,
+                          "Milk Tea / Cheese Foam / Others": 0.172125,
+                          "Oat Milk Tea": 0.212138
+                        },
+                        "samples": 830,
+                        "observed_prediction": "Low-Sugar Tea Drinks",
+                        "observed_dominant_share": 0.292771,
+                        "class_counts": {
+                          "Fruit Tea": 194,
+                          "Light Milk Tea": 190,
+                          "Low-Sugar Tea Drinks": 243,
+                          "Milk Tea / Cheese Foam / Others": 49,
+                          "Oat Milk Tea": 154
+                        },
+                        "class_distribution": {
+                          "Fruit Tea": 0.233735,
+                          "Light Milk Tea": 0.228916,
+                          "Low-Sugar Tea Drinks": 0.292771,
+                          "Milk Tea / Cheese Foam / Others": 0.059036,
+                          "Oat Milk Tea": 0.185542
+                        },
+                        "top_brands": [
+                          {
+                            "brand": "古茗",
+                            "count": 160,
+                            "share": 0.192771
+                          },
+                          {
+                            "brand": "喜茶",
+                            "count": 140,
+                            "share": 0.168675
+                          },
+                          {
+                            "brand": "茶百道",
+                            "count": 139,
+                            "share": 0.16747
+                          },
+                          {
+                            "brand": "奈雪",
+                            "count": 133,
+                            "share": 0.160241
+                          },
+                          {
+                            "brand": "蜜雪冰城",
+                            "count": 127,
+                            "share": 0.153012
+                          }
+                        ],
+                        "average_order_amount": 71.76,
+                        "branch": "yes",
+                        "branch_label": "Yes"
+                      }
+                    ],
+                    "branch": "yes",
+                    "branch_label": "Yes"
+                  }
+                ],
+                "branch": "yes",
+                "branch_label": "Yes"
+              }
+            ],
+            "branch": "yes",
+            "branch_label": "Yes"
+          }
+        ],
+        "branch": "no",
+        "branch_label": "No"
+      },
+      {
+        "id": 2,
+        "type": "split",
+        "depth": 1,
+        "prediction": "Milk Tea / Cheese Foam / Others",
+        "dominant_share": 0.212081,
+        "model_prediction": "Milk Tea / Cheese Foam / Others",
+        "model_dominant_share": 0.212081,
+        "model_class_distribution": {
+          "Fruit Tea": 0.200124,
+          "Light Milk Tea": 0.196017,
+          "Low-Sugar Tea Drinks": 0.198119,
+          "Milk Tea / Cheese Foam / Others": 0.212081,
+          "Oat Milk Tea": 0.193658
+        },
+        "samples": 12112,
+        "observed_prediction": "Low-Sugar Tea Drinks",
+        "observed_dominant_share": 0.281704,
+        "class_counts": {
+          "Fruit Tea": 3043,
+          "Light Milk Tea": 2638,
+          "Low-Sugar Tea Drinks": 3412,
+          "Milk Tea / Cheese Foam / Others": 907,
+          "Oat Milk Tea": 2112
+        },
+        "class_distribution": {
+          "Fruit Tea": 0.251238,
+          "Light Milk Tea": 0.217801,
+          "Low-Sugar Tea Drinks": 0.281704,
+          "Milk Tea / Cheese Foam / Others": 0.074884,
+          "Oat Milk Tea": 0.174373
+        },
+        "top_brands": [
+          {
+            "brand": "奈雪",
+            "count": 2107,
+            "share": 0.17396
+          },
+          {
+            "brand": "喜茶",
+            "count": 2095,
+            "share": 0.172969
+          },
+          {
+            "brand": "古茗",
+            "count": 2033,
+            "share": 0.16785
+          },
+          {
+            "brand": "茶百道",
+            "count": 2024,
+            "share": 0.167107
+          },
+          {
+            "brand": "蜜雪冰城",
+            "count": 1978,
+            "share": 0.163309
+          }
+        ],
+        "average_order_amount": 42.72,
+        "question": "Budget = High?",
+        "condition": {
+          "feature": "budget_band",
+          "operator": "equals",
+          "value": "High",
+          "encoded_feature": "budget_band=High",
+          "threshold": 0.5
+        },
+        "children": [
+          {
+            "id": 25,
+            "type": "split",
+            "depth": 2,
+            "prediction": "Milk Tea / Cheese Foam / Others",
+            "dominant_share": 0.213929,
+            "model_prediction": "Milk Tea / Cheese Foam / Others",
+            "model_dominant_share": 0.213929,
+            "model_class_distribution": {
+              "Fruit Tea": 0.197455,
+              "Light Milk Tea": 0.197715,
+              "Low-Sugar Tea Drinks": 0.193196,
+              "Milk Tea / Cheese Foam / Others": 0.213929,
+              "Oat Milk Tea": 0.197704
+            },
+            "samples": 7910,
+            "observed_prediction": "Low-Sugar Tea Drinks",
+            "observed_dominant_share": 0.275853,
+            "class_counts": {
+              "Fruit Tea": 1969,
+              "Light Milk Tea": 1745,
+              "Low-Sugar Tea Drinks": 2182,
+              "Milk Tea / Cheese Foam / Others": 600,
+              "Oat Milk Tea": 1414
+            },
+            "class_distribution": {
+              "Fruit Tea": 0.248925,
+              "Light Milk Tea": 0.220607,
+              "Low-Sugar Tea Drinks": 0.275853,
+              "Milk Tea / Cheese Foam / Others": 0.075853,
+              "Oat Milk Tea": 0.178761
+            },
+            "top_brands": [
+              {
+                "brand": "奈雪",
+                "count": 1402,
+                "share": 0.177244
+              },
+              {
+                "brand": "喜茶",
+                "count": 1371,
+                "share": 0.173325
+              },
+              {
+                "brand": "茶百道",
+                "count": 1332,
+                "share": 0.168394
+              },
+              {
+                "brand": "蜜雪冰城",
+                "count": 1300,
+                "share": 0.164349
+              },
+              {
+                "brand": "古茗",
+                "count": 1287,
+                "share": 0.162705
+              }
+            ],
+            "average_order_amount": 27.64,
+            "question": "Gender = female?",
+            "condition": {
+              "feature": "gender",
+              "operator": "equals",
+              "value": "female",
+              "encoded_feature": "gender=female",
+              "threshold": 0.5
+            },
+            "children": [
+              {
+                "id": 31,
+                "type": "leaf",
+                "depth": 3,
+                "prediction": "Oat Milk Tea",
+                "dominant_share": 0.208436,
+                "model_prediction": "Oat Milk Tea",
+                "model_dominant_share": 0.208436,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.199241,
+                  "Light Milk Tea": 0.20056,
+                  "Low-Sugar Tea Drinks": 0.192557,
+                  "Milk Tea / Cheese Foam / Others": 0.199206,
+                  "Oat Milk Tea": 0.208436
+                },
+                "samples": 3057,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.272489,
+                "class_counts": {
+                  "Fruit Tea": 761,
+                  "Light Milk Tea": 678,
+                  "Low-Sugar Tea Drinks": 833,
+                  "Milk Tea / Cheese Foam / Others": 214,
+                  "Oat Milk Tea": 571
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.248937,
+                  "Light Milk Tea": 0.221786,
+                  "Low-Sugar Tea Drinks": 0.272489,
+                  "Milk Tea / Cheese Foam / Others": 0.070003,
+                  "Oat Milk Tea": 0.186784
+                },
+                "top_brands": [
+                  {
+                    "brand": "奈雪",
+                    "count": 553,
+                    "share": 0.180896
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 544,
+                    "share": 0.177952
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 530,
+                    "share": 0.173373
+                  },
+                  {
+                    "brand": "古茗",
+                    "count": 499,
+                    "share": 0.163232
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 480,
+                    "share": 0.157017
+                  }
+                ],
+                "average_order_amount": 27.54,
+                "branch": "no",
+                "branch_label": "No"
+              },
+              {
+                "id": 32,
+                "type": "split",
+                "depth": 3,
+                "prediction": "Milk Tea / Cheese Foam / Others",
+                "dominant_share": 0.223069,
+                "model_prediction": "Milk Tea / Cheese Foam / Others",
+                "model_dominant_share": 0.223069,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.196347,
+                  "Light Milk Tea": 0.195949,
+                  "Low-Sugar Tea Drinks": 0.193593,
+                  "Milk Tea / Cheese Foam / Others": 0.223069,
+                  "Oat Milk Tea": 0.191042
+                },
+                "samples": 4853,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.277972,
+                "class_counts": {
+                  "Fruit Tea": 1208,
+                  "Light Milk Tea": 1067,
+                  "Low-Sugar Tea Drinks": 1349,
+                  "Milk Tea / Cheese Foam / Others": 386,
+                  "Oat Milk Tea": 843
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.248918,
+                  "Light Milk Tea": 0.219864,
+                  "Low-Sugar Tea Drinks": 0.277972,
+                  "Milk Tea / Cheese Foam / Others": 0.079538,
+                  "Oat Milk Tea": 0.173707
+                },
+                "top_brands": [
+                  {
+                    "brand": "奈雪",
+                    "count": 849,
+                    "share": 0.174943
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 841,
+                    "share": 0.173295
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 820,
+                    "share": 0.168968
+                  },
+                  {
+                    "brand": "古茗",
+                    "count": 788,
+                    "share": 0.162374
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 788,
+                    "share": 0.162374
+                  }
+                ],
+                "average_order_amount": 27.69,
+                "question": "City tier = 1st-tier?",
+                "condition": {
+                  "feature": "city_level",
+                  "operator": "equals",
+                  "value": "1st-tier",
+                  "encoded_feature": "city_level=1st-tier",
+                  "threshold": 0.5
+                },
+                "children": [
+                  {
+                    "id": 33,
+                    "type": "leaf",
+                    "depth": 4,
+                    "prediction": "Milk Tea / Cheese Foam / Others",
+                    "dominant_share": 0.235287,
+                    "model_prediction": "Milk Tea / Cheese Foam / Others",
+                    "model_dominant_share": 0.235287,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.191037,
+                      "Light Milk Tea": 0.189604,
+                      "Low-Sugar Tea Drinks": 0.192923,
+                      "Milk Tea / Cheese Foam / Others": 0.235287,
+                      "Oat Milk Tea": 0.191149
+                    },
+                    "samples": 3126,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.27991,
+                    "class_counts": {
+                      "Fruit Tea": 765,
+                      "Light Milk Tea": 672,
+                      "Low-Sugar Tea Drinks": 875,
+                      "Milk Tea / Cheese Foam / Others": 265,
+                      "Oat Milk Tea": 549
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.244722,
+                      "Light Milk Tea": 0.214971,
+                      "Low-Sugar Tea Drinks": 0.27991,
+                      "Milk Tea / Cheese Foam / Others": 0.084773,
+                      "Oat Milk Tea": 0.175624
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "奈雪",
+                        "count": 560,
+                        "share": 0.179143
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 541,
+                        "share": 0.173065
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 536,
+                        "share": 0.171465
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 511,
+                        "share": 0.163468
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 508,
+                        "share": 0.162508
+                      }
+                    ],
+                    "average_order_amount": 27.78,
+                    "branch": "no",
+                    "branch_label": "No"
+                  },
+                  {
+                    "id": 34,
+                    "type": "leaf",
+                    "depth": 4,
+                    "prediction": "Light Milk Tea",
+                    "dominant_share": 0.207779,
+                    "model_prediction": "Light Milk Tea",
+                    "model_dominant_share": 0.207779,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.206246,
+                      "Light Milk Tea": 0.207779,
+                      "Low-Sugar Tea Drinks": 0.194841,
+                      "Milk Tea / Cheese Foam / Others": 0.200292,
+                      "Oat Milk Tea": 0.190842
+                    },
+                    "samples": 1727,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.274464,
+                    "class_counts": {
+                      "Fruit Tea": 443,
+                      "Light Milk Tea": 395,
+                      "Low-Sugar Tea Drinks": 474,
+                      "Milk Tea / Cheese Foam / Others": 121,
+                      "Oat Milk Tea": 294
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.256514,
+                      "Light Milk Tea": 0.22872,
+                      "Low-Sugar Tea Drinks": 0.274464,
+                      "Milk Tea / Cheese Foam / Others": 0.070064,
+                      "Oat Milk Tea": 0.170237
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "喜茶",
+                        "count": 300,
+                        "share": 0.173712
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 289,
+                        "share": 0.167342
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 284,
+                        "share": 0.164447
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 280,
+                        "share": 0.162131
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 277,
+                        "share": 0.160394
+                      }
+                    ],
+                    "average_order_amount": 27.53,
+                    "branch": "yes",
+                    "branch_label": "Yes"
+                  }
+                ],
+                "branch": "yes",
+                "branch_label": "Yes"
+              }
+            ],
+            "branch": "no",
+            "branch_label": "No"
+          },
+          {
+            "id": 26,
+            "type": "split",
+            "depth": 2,
+            "prediction": "Milk Tea / Cheese Foam / Others",
+            "dominant_share": 0.208558,
+            "model_prediction": "Milk Tea / Cheese Foam / Others",
+            "model_dominant_share": 0.208558,
+            "model_class_distribution": {
+              "Fruit Tea": 0.20521,
+              "Light Milk Tea": 0.192782,
+              "Low-Sugar Tea Drinks": 0.207501,
+              "Milk Tea / Cheese Foam / Others": 0.208558,
+              "Oat Milk Tea": 0.185949
+            },
+            "samples": 4202,
+            "observed_prediction": "Low-Sugar Tea Drinks",
+            "observed_dominant_share": 0.292718,
+            "class_counts": {
+              "Fruit Tea": 1074,
+              "Light Milk Tea": 893,
+              "Low-Sugar Tea Drinks": 1230,
+              "Milk Tea / Cheese Foam / Others": 307,
+              "Oat Milk Tea": 698
+            },
+            "class_distribution": {
+              "Fruit Tea": 0.255593,
+              "Light Milk Tea": 0.212518,
+              "Low-Sugar Tea Drinks": 0.292718,
+              "Milk Tea / Cheese Foam / Others": 0.07306,
+              "Oat Milk Tea": 0.166111
+            },
+            "top_brands": [
+              {
+                "brand": "古茗",
+                "count": 746,
+                "share": 0.177535
+              },
+              {
+                "brand": "喜茶",
+                "count": 724,
+                "share": 0.172299
+              },
+              {
+                "brand": "奈雪",
+                "count": 705,
+                "share": 0.167777
+              },
+              {
+                "brand": "茶百道",
+                "count": 692,
+                "share": 0.164683
+              },
+              {
+                "brand": "蜜雪冰城",
+                "count": 678,
+                "share": 0.161352
+              }
+            ],
+            "average_order_amount": 71.11,
+            "question": "Scenario = Dine-in?",
+            "condition": {
+              "feature": "scenario",
+              "operator": "equals",
+              "value": "Dine-in",
+              "encoded_feature": "scenario=Dine-in",
+              "threshold": 0.5
+            },
+            "children": [
+              {
+                "id": 27,
+                "type": "leaf",
+                "depth": 3,
+                "prediction": "Milk Tea / Cheese Foam / Others",
+                "dominant_share": 0.219775,
+                "model_prediction": "Milk Tea / Cheese Foam / Others",
+                "model_dominant_share": 0.219775,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.203562,
+                  "Light Milk Tea": 0.195496,
+                  "Low-Sugar Tea Drinks": 0.199455,
+                  "Milk Tea / Cheese Foam / Others": 0.219775,
+                  "Oat Milk Tea": 0.181713
+                },
+                "samples": 3201,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.284286,
+                "class_counts": {
+                  "Fruit Tea": 820,
+                  "Light Milk Tea": 697,
+                  "Low-Sugar Tea Drinks": 910,
+                  "Milk Tea / Cheese Foam / Others": 249,
+                  "Oat Milk Tea": 525
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.25617,
+                  "Light Milk Tea": 0.217744,
+                  "Low-Sugar Tea Drinks": 0.284286,
+                  "Milk Tea / Cheese Foam / Others": 0.077788,
+                  "Oat Milk Tea": 0.164011
+                },
+                "top_brands": [
+                  {
+                    "brand": "古茗",
+                    "count": 567,
+                    "share": 0.177132
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 566,
+                    "share": 0.17682
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 530,
+                    "share": 0.165573
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 529,
+                    "share": 0.165261
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 516,
+                    "share": 0.1612
+                  }
+                ],
+                "average_order_amount": 71.02,
+                "branch": "no",
+                "branch_label": "No"
+              },
+              {
+                "id": 28,
+                "type": "split",
+                "depth": 3,
+                "prediction": "Low-Sugar Tea Drinks",
+                "dominant_share": 0.234388,
+                "model_prediction": "Low-Sugar Tea Drinks",
+                "model_dominant_share": 0.234388,
+                "model_class_distribution": {
+                  "Fruit Tea": 0.210717,
+                  "Light Milk Tea": 0.183715,
+                  "Low-Sugar Tea Drinks": 0.234388,
+                  "Milk Tea / Cheese Foam / Others": 0.171076,
+                  "Oat Milk Tea": 0.200104
+                },
+                "samples": 1001,
+                "observed_prediction": "Low-Sugar Tea Drinks",
+                "observed_dominant_share": 0.31968,
+                "class_counts": {
+                  "Fruit Tea": 254,
+                  "Light Milk Tea": 196,
+                  "Low-Sugar Tea Drinks": 320,
+                  "Milk Tea / Cheese Foam / Others": 58,
+                  "Oat Milk Tea": 173
+                },
+                "class_distribution": {
+                  "Fruit Tea": 0.253746,
+                  "Light Milk Tea": 0.195804,
+                  "Low-Sugar Tea Drinks": 0.31968,
+                  "Milk Tea / Cheese Foam / Others": 0.057942,
+                  "Oat Milk Tea": 0.172827
+                },
+                "top_brands": [
+                  {
+                    "brand": "古茗",
+                    "count": 179,
+                    "share": 0.178821
+                  },
+                  {
+                    "brand": "奈雪",
+                    "count": 175,
+                    "share": 0.174825
+                  },
+                  {
+                    "brand": "茶百道",
+                    "count": 163,
+                    "share": 0.162837
+                  },
+                  {
+                    "brand": "蜜雪冰城",
+                    "count": 162,
+                    "share": 0.161838
+                  },
+                  {
+                    "brand": "喜茶",
+                    "count": 158,
+                    "share": 0.157842
+                  }
+                ],
+                "average_order_amount": 71.4,
+                "question": "City tier = 1st-tier?",
+                "condition": {
+                  "feature": "city_level",
+                  "operator": "equals",
+                  "value": "1st-tier",
+                  "encoded_feature": "city_level=1st-tier",
+                  "threshold": 0.5
+                },
+                "children": [
+                  {
+                    "id": 29,
+                    "type": "leaf",
+                    "depth": 4,
+                    "prediction": "Low-Sugar Tea Drinks",
+                    "dominant_share": 0.263731,
+                    "model_prediction": "Low-Sugar Tea Drinks",
+                    "model_dominant_share": 0.263731,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.206093,
+                      "Light Milk Tea": 0.201905,
+                      "Low-Sugar Tea Drinks": 0.263731,
+                      "Milk Tea / Cheese Foam / Others": 0.139131,
+                      "Oat Milk Tea": 0.18914
+                    },
+                    "samples": 658,
+                    "observed_prediction": "Low-Sugar Tea Drinks",
+                    "observed_dominant_share": 0.348024,
+                    "class_counts": {
+                      "Fruit Tea": 158,
+                      "Light Milk Tea": 137,
+                      "Low-Sugar Tea Drinks": 229,
+                      "Milk Tea / Cheese Foam / Others": 30,
+                      "Oat Milk Tea": 104
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.240122,
+                      "Light Milk Tea": 0.208207,
+                      "Low-Sugar Tea Drinks": 0.348024,
+                      "Milk Tea / Cheese Foam / Others": 0.045593,
+                      "Oat Milk Tea": 0.158055
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "古茗",
+                        "count": 120,
+                        "share": 0.182371
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 116,
+                        "share": 0.176292
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 107,
+                        "share": 0.162614
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 106,
+                        "share": 0.161094
+                      },
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 101,
+                        "share": 0.153495
+                      }
+                    ],
+                    "average_order_amount": 71.47,
+                    "branch": "no",
+                    "branch_label": "No"
+                  },
+                  {
+                    "id": 30,
+                    "type": "leaf",
+                    "depth": 4,
+                    "prediction": "Milk Tea / Cheese Foam / Others",
+                    "dominant_share": 0.226894,
+                    "model_prediction": "Milk Tea / Cheese Foam / Others",
+                    "model_dominant_share": 0.226894,
+                    "model_class_distribution": {
+                      "Fruit Tea": 0.218797,
+                      "Light Milk Tea": 0.15193,
+                      "Low-Sugar Tea Drinks": 0.183118,
+                      "Milk Tea / Cheese Foam / Others": 0.226894,
+                      "Oat Milk Tea": 0.219261
+                    },
+                    "samples": 343,
+                    "observed_prediction": "Fruit Tea",
+                    "observed_dominant_share": 0.279883,
+                    "class_counts": {
+                      "Fruit Tea": 96,
+                      "Light Milk Tea": 59,
+                      "Low-Sugar Tea Drinks": 91,
+                      "Milk Tea / Cheese Foam / Others": 28,
+                      "Oat Milk Tea": 69
+                    },
+                    "class_distribution": {
+                      "Fruit Tea": 0.279883,
+                      "Light Milk Tea": 0.172012,
+                      "Low-Sugar Tea Drinks": 0.265306,
+                      "Milk Tea / Cheese Foam / Others": 0.081633,
+                      "Oat Milk Tea": 0.201166
+                    },
+                    "top_brands": [
+                      {
+                        "brand": "蜜雪冰城",
+                        "count": 61,
+                        "share": 0.177843
+                      },
+                      {
+                        "brand": "奈雪",
+                        "count": 59,
+                        "share": 0.172012
+                      },
+                      {
+                        "brand": "古茗",
+                        "count": 59,
+                        "share": 0.172012
+                      },
+                      {
+                        "brand": "茶百道",
+                        "count": 56,
+                        "share": 0.163265
+                      },
+                      {
+                        "brand": "喜茶",
+                        "count": 52,
+                        "share": 0.151603
+                      }
+                    ],
+                    "average_order_amount": 71.26,
+                    "branch": "yes",
+                    "branch_label": "Yes"
+                  }
+                ],
+                "branch": "yes",
+                "branch_label": "Yes"
+              }
+            ],
+            "branch": "yes",
+            "branch_label": "Yes"
+          }
+        ],
+        "branch": "yes",
+        "branch_label": "Yes"
+      }
+    ]
+  },
+  "leaf_summary": [
+    {
+      "id": 5,
+      "depth": 3,
+      "samples": 4467,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.222095,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.222095,
+      "model_class_distribution": {
+        "Fruit Tea": 0.200595,
+        "Light Milk Tea": 0.196623,
+        "Low-Sugar Tea Drinks": 0.182702,
+        "Milk Tea / Cheese Foam / Others": 0.222095,
+        "Oat Milk Tea": 0.197985
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.263264,
+      "class_counts": {
+        "Fruit Tea": 1140,
+        "Light Milk Tea": 989,
+        "Low-Sugar Tea Drinks": 1176,
+        "Milk Tea / Cheese Foam / Others": 355,
+        "Oat Milk Tea": 807
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.255205,
+        "Light Milk Tea": 0.221401,
+        "Low-Sugar Tea Drinks": 0.263264,
+        "Milk Tea / Cheese Foam / Others": 0.079472,
+        "Oat Milk Tea": 0.180658
+      },
+      "top_brands": [
+        {
+          "brand": "茶百道",
+          "count": 783,
+          "share": 0.175285
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 767,
+          "share": 0.171704
+        },
+        {
+          "brand": "奈雪",
+          "count": 760,
+          "share": 0.170137
+        },
+        {
+          "brand": "喜茶",
+          "count": 746,
+          "share": 0.167002
+        },
+        {
+          "brand": "古茗",
+          "count": 725,
+          "share": 0.162301
+        }
+      ],
+      "average_order_amount": 27.81
+    },
+    {
+      "id": 15,
+      "depth": 4,
+      "samples": 2026,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.217438,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.217438,
+      "model_class_distribution": {
+        "Fruit Tea": 0.205759,
+        "Light Milk Tea": 0.209875,
+        "Low-Sugar Tea Drinks": 0.20726,
+        "Milk Tea / Cheese Foam / Others": 0.159667,
+        "Oat Milk Tea": 0.217438
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.28381,
+      "class_counts": {
+        "Fruit Tea": 504,
+        "Light Milk Tea": 455,
+        "Low-Sugar Tea Drinks": 575,
+        "Milk Tea / Cheese Foam / Others": 110,
+        "Oat Milk Tea": 382
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.248766,
+        "Light Milk Tea": 0.22458,
+        "Low-Sugar Tea Drinks": 0.28381,
+        "Milk Tea / Cheese Foam / Others": 0.054294,
+        "Oat Milk Tea": 0.188549
+      },
+      "top_brands": [
+        {
+          "brand": "蜜雪冰城",
+          "count": 377,
+          "share": 0.186081
+        },
+        {
+          "brand": "喜茶",
+          "count": 355,
+          "share": 0.175222
+        },
+        {
+          "brand": "奈雪",
+          "count": 341,
+          "share": 0.168312
+        },
+        {
+          "brand": "茶百道",
+          "count": 335,
+          "share": 0.16535
+        },
+        {
+          "brand": "古茗",
+          "count": 318,
+          "share": 0.15696
+        }
+      ],
+      "average_order_amount": 70.77
+    },
+    {
+      "id": 21,
+      "depth": 5,
+      "samples": 267,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.244821,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.244821,
+      "model_class_distribution": {
+        "Fruit Tea": 0.18649,
+        "Light Milk Tea": 0.230156,
+        "Low-Sugar Tea Drinks": 0.154523,
+        "Milk Tea / Cheese Foam / Others": 0.244821,
+        "Oat Milk Tea": 0.184011
+      },
+      "observed_prediction": "Light Milk Tea",
+      "observed_dominant_share": 0.265918,
+      "class_counts": {
+        "Fruit Tea": 65,
+        "Light Milk Tea": 71,
+        "Low-Sugar Tea Drinks": 61,
+        "Milk Tea / Cheese Foam / Others": 24,
+        "Oat Milk Tea": 46
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.243446,
+        "Light Milk Tea": 0.265918,
+        "Low-Sugar Tea Drinks": 0.228464,
+        "Milk Tea / Cheese Foam / Others": 0.089888,
+        "Oat Milk Tea": 0.172285
+      },
+      "top_brands": [
+        {
+          "brand": "喜茶",
+          "count": 55,
+          "share": 0.205993
+        },
+        {
+          "brand": "古茗",
+          "count": 45,
+          "share": 0.168539
+        },
+        {
+          "brand": "奈雪",
+          "count": 43,
+          "share": 0.161049
+        },
+        {
+          "brand": "茶百道",
+          "count": 41,
+          "share": 0.153558
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 37,
+          "share": 0.138577
+        }
+      ],
+      "average_order_amount": 72.28
+    },
+    {
+      "id": 22,
+      "depth": 5,
+      "samples": 104,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.303554,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.303554,
+      "model_class_distribution": {
+        "Fruit Tea": 0.217717,
+        "Light Milk Tea": 0.152682,
+        "Low-Sugar Tea Drinks": 0.139198,
+        "Milk Tea / Cheese Foam / Others": 0.186848,
+        "Oat Milk Tea": 0.303554
+      },
+      "observed_prediction": "Fruit Tea",
+      "observed_dominant_share": 0.278846,
+      "class_counts": {
+        "Fruit Tea": 29,
+        "Light Milk Tea": 18,
+        "Low-Sugar Tea Drinks": 21,
+        "Milk Tea / Cheese Foam / Others": 7,
+        "Oat Milk Tea": 29
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.278846,
+        "Light Milk Tea": 0.173077,
+        "Low-Sugar Tea Drinks": 0.201923,
+        "Milk Tea / Cheese Foam / Others": 0.067308,
+        "Oat Milk Tea": 0.278846
+      },
+      "top_brands": [
+        {
+          "brand": "蜜雪冰城",
+          "count": 25,
+          "share": 0.240385
+        },
+        {
+          "brand": "奈雪",
+          "count": 18,
+          "share": 0.173077
+        },
+        {
+          "brand": "喜茶",
+          "count": 17,
+          "share": 0.163462
+        },
+        {
+          "brand": "古茗",
+          "count": 15,
+          "share": 0.144231
+        },
+        {
+          "brand": "茶百道",
+          "count": 14,
+          "share": 0.134615
+        }
+      ],
+      "average_order_amount": 69.22
+    },
+    {
+      "id": 11,
+      "depth": 5,
+      "samples": 2898,
+      "prediction": "Fruit Tea",
+      "dominant_share": 0.215038,
+      "model_prediction": "Fruit Tea",
+      "model_dominant_share": 0.215038,
+      "model_class_distribution": {
+        "Fruit Tea": 0.215038,
+        "Light Milk Tea": 0.202307,
+        "Low-Sugar Tea Drinks": 0.212123,
+        "Milk Tea / Cheese Foam / Others": 0.181318,
+        "Oat Milk Tea": 0.189214
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.292616,
+      "class_counts": {
+        "Fruit Tea": 759,
+        "Light Milk Tea": 632,
+        "Low-Sugar Tea Drinks": 848,
+        "Milk Tea / Cheese Foam / Others": 180,
+        "Oat Milk Tea": 479
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.261905,
+        "Light Milk Tea": 0.218081,
+        "Low-Sugar Tea Drinks": 0.292616,
+        "Milk Tea / Cheese Foam / Others": 0.062112,
+        "Oat Milk Tea": 0.165286
+      },
+      "top_brands": [
+        {
+          "brand": "奈雪",
+          "count": 513,
+          "share": 0.177019
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 509,
+          "share": 0.175638
+        },
+        {
+          "brand": "茶百道",
+          "count": 509,
+          "share": 0.175638
+        },
+        {
+          "brand": "喜茶",
+          "count": 485,
+          "share": 0.167357
+        },
+        {
+          "brand": "古茗",
+          "count": 466,
+          "share": 0.160801
+        }
+      ],
+      "average_order_amount": 48.55
+    },
+    {
+      "id": 12,
+      "depth": 5,
+      "samples": 2317,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.2286,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.2286,
+      "model_class_distribution": {
+        "Fruit Tea": 0.19969,
+        "Light Milk Tea": 0.19564,
+        "Low-Sugar Tea Drinks": 0.195833,
+        "Milk Tea / Cheese Foam / Others": 0.2286,
+        "Oat Milk Tea": 0.180238
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.281398,
+      "class_counts": {
+        "Fruit Tea": 587,
+        "Light Milk Tea": 509,
+        "Low-Sugar Tea Drinks": 652,
+        "Milk Tea / Cheese Foam / Others": 189,
+        "Oat Milk Tea": 380
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.253345,
+        "Light Milk Tea": 0.219681,
+        "Low-Sugar Tea Drinks": 0.281398,
+        "Milk Tea / Cheese Foam / Others": 0.081571,
+        "Oat Milk Tea": 0.164005
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 406,
+          "share": 0.175227
+        },
+        {
+          "brand": "喜茶",
+          "count": 403,
+          "share": 0.173932
+        },
+        {
+          "brand": "茶百道",
+          "count": 402,
+          "share": 0.1735
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 391,
+          "share": 0.168753
+        },
+        {
+          "brand": "奈雪",
+          "count": 362,
+          "share": 0.156237
+        }
+      ],
+      "average_order_amount": 46.49
+    },
+    {
+      "id": 19,
+      "depth": 5,
+      "samples": 2553,
+      "prediction": "Low-Sugar Tea Drinks",
+      "dominant_share": 0.223245,
+      "model_prediction": "Low-Sugar Tea Drinks",
+      "model_dominant_share": 0.223245,
+      "model_class_distribution": {
+        "Fruit Tea": 0.188429,
+        "Light Milk Tea": 0.199431,
+        "Low-Sugar Tea Drinks": 0.223245,
+        "Milk Tea / Cheese Foam / Others": 0.170637,
+        "Oat Milk Tea": 0.218259
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.307481,
+      "class_counts": {
+        "Fruit Tea": 585,
+        "Light Milk Tea": 548,
+        "Low-Sugar Tea Drinks": 785,
+        "Milk Tea / Cheese Foam / Others": 149,
+        "Oat Milk Tea": 486
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.229142,
+        "Light Milk Tea": 0.214649,
+        "Low-Sugar Tea Drinks": 0.307481,
+        "Milk Tea / Cheese Foam / Others": 0.058363,
+        "Oat Milk Tea": 0.190364
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 470,
+          "share": 0.184097
+        },
+        {
+          "brand": "奈雪",
+          "count": 445,
+          "share": 0.174305
+        },
+        {
+          "brand": "喜茶",
+          "count": 424,
+          "share": 0.166079
+        },
+        {
+          "brand": "茶百道",
+          "count": 411,
+          "share": 0.160987
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 406,
+          "share": 0.159029
+        }
+      ],
+      "average_order_amount": 35.0
+    },
+    {
+      "id": 20,
+      "depth": 5,
+      "samples": 594,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.221561,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.221561,
+      "model_class_distribution": {
+        "Fruit Tea": 0.196228,
+        "Light Milk Tea": 0.191748,
+        "Low-Sugar Tea Drinks": 0.190813,
+        "Milk Tea / Cheese Foam / Others": 0.221561,
+        "Oat Milk Tea": 0.199649
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.274411,
+      "class_counts": {
+        "Fruit Tea": 148,
+        "Light Milk Tea": 128,
+        "Low-Sugar Tea Drinks": 163,
+        "Milk Tea / Cheese Foam / Others": 47,
+        "Oat Milk Tea": 108
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.249158,
+        "Light Milk Tea": 0.215488,
+        "Low-Sugar Tea Drinks": 0.274411,
+        "Milk Tea / Cheese Foam / Others": 0.079125,
+        "Oat Milk Tea": 0.181818
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 115,
+          "share": 0.193603
+        },
+        {
+          "brand": "茶百道",
+          "count": 107,
+          "share": 0.180135
+        },
+        {
+          "brand": "奈雪",
+          "count": 104,
+          "share": 0.175084
+        },
+        {
+          "brand": "喜茶",
+          "count": 98,
+          "share": 0.164983
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 78,
+          "share": 0.131313
+        }
+      ],
+      "average_order_amount": 35.2
+    },
+    {
+      "id": 17,
+      "depth": 5,
+      "samples": 1593,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.236079,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.236079,
+      "model_class_distribution": {
+        "Fruit Tea": 0.192135,
+        "Light Milk Tea": 0.187872,
+        "Low-Sugar Tea Drinks": 0.201866,
+        "Milk Tea / Cheese Foam / Others": 0.182047,
+        "Oat Milk Tea": 0.236079
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.283114,
+      "class_counts": {
+        "Fruit Tea": 379,
+        "Light Milk Tea": 328,
+        "Low-Sugar Tea Drinks": 451,
+        "Milk Tea / Cheese Foam / Others": 101,
+        "Oat Milk Tea": 334
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.237916,
+        "Light Milk Tea": 0.205901,
+        "Low-Sugar Tea Drinks": 0.283114,
+        "Milk Tea / Cheese Foam / Others": 0.063402,
+        "Oat Milk Tea": 0.209667
+      },
+      "top_brands": [
+        {
+          "brand": "茶百道",
+          "count": 274,
+          "share": 0.172003
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 271,
+          "share": 0.170119
+        },
+        {
+          "brand": "古茗",
+          "count": 267,
+          "share": 0.167608
+        },
+        {
+          "brand": "奈雪",
+          "count": 264,
+          "share": 0.165725
+        },
+        {
+          "brand": "喜茶",
+          "count": 258,
+          "share": 0.161959
+        }
+      ],
+      "average_order_amount": 28.01
+    },
+    {
+      "id": 18,
+      "depth": 5,
+      "samples": 1298,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.231462,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.231462,
+      "model_class_distribution": {
+        "Fruit Tea": 0.18524,
+        "Light Milk Tea": 0.225226,
+        "Low-Sugar Tea Drinks": 0.212221,
+        "Milk Tea / Cheese Foam / Others": 0.145852,
+        "Oat Milk Tea": 0.231462
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.288906,
+      "class_counts": {
+        "Fruit Tea": 289,
+        "Light Milk Tea": 311,
+        "Low-Sugar Tea Drinks": 375,
+        "Milk Tea / Cheese Foam / Others": 64,
+        "Oat Milk Tea": 259
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.22265,
+        "Light Milk Tea": 0.239599,
+        "Low-Sugar Tea Drinks": 0.288906,
+        "Milk Tea / Cheese Foam / Others": 0.049307,
+        "Oat Milk Tea": 0.199538
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 227,
+          "share": 0.174884
+        },
+        {
+          "brand": "喜茶",
+          "count": 225,
+          "share": 0.173344
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 217,
+          "share": 0.16718
+        },
+        {
+          "brand": "茶百道",
+          "count": 213,
+          "share": 0.164099
+        },
+        {
+          "brand": "奈雪",
+          "count": 212,
+          "share": 0.163328
+        }
+      ],
+      "average_order_amount": 27.3
+    },
+    {
+      "id": 23,
+      "depth": 5,
+      "samples": 741,
+      "prediction": "Light Milk Tea",
+      "dominant_share": 0.240505,
+      "model_prediction": "Light Milk Tea",
+      "model_dominant_share": 0.240505,
+      "model_class_distribution": {
+        "Fruit Tea": 0.218436,
+        "Light Milk Tea": 0.240505,
+        "Low-Sugar Tea Drinks": 0.202701,
+        "Milk Tea / Cheese Foam / Others": 0.17831,
+        "Oat Milk Tea": 0.160048
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.278003,
+      "class_counts": {
+        "Fruit Tea": 196,
+        "Light Milk Tea": 191,
+        "Low-Sugar Tea Drinks": 206,
+        "Milk Tea / Cheese Foam / Others": 45,
+        "Oat Milk Tea": 103
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.264507,
+        "Light Milk Tea": 0.25776,
+        "Low-Sugar Tea Drinks": 0.278003,
+        "Milk Tea / Cheese Foam / Others": 0.060729,
+        "Oat Milk Tea": 0.139001
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 133,
+          "share": 0.179487
+        },
+        {
+          "brand": "茶百道",
+          "count": 130,
+          "share": 0.175439
+        },
+        {
+          "brand": "喜茶",
+          "count": 125,
+          "share": 0.168691
+        },
+        {
+          "brand": "奈雪",
+          "count": 124,
+          "share": 0.167341
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 118,
+          "share": 0.159244
+        }
+      ],
+      "average_order_amount": 71.71
+    },
+    {
+      "id": 24,
+      "depth": 5,
+      "samples": 830,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.212138,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.212138,
+      "model_class_distribution": {
+        "Fruit Tea": 0.19167,
+        "Light Milk Tea": 0.212094,
+        "Low-Sugar Tea Drinks": 0.211973,
+        "Milk Tea / Cheese Foam / Others": 0.172125,
+        "Oat Milk Tea": 0.212138
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.292771,
+      "class_counts": {
+        "Fruit Tea": 194,
+        "Light Milk Tea": 190,
+        "Low-Sugar Tea Drinks": 243,
+        "Milk Tea / Cheese Foam / Others": 49,
+        "Oat Milk Tea": 154
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.233735,
+        "Light Milk Tea": 0.228916,
+        "Low-Sugar Tea Drinks": 0.292771,
+        "Milk Tea / Cheese Foam / Others": 0.059036,
+        "Oat Milk Tea": 0.185542
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 160,
+          "share": 0.192771
+        },
+        {
+          "brand": "喜茶",
+          "count": 140,
+          "share": 0.168675
+        },
+        {
+          "brand": "茶百道",
+          "count": 139,
+          "share": 0.16747
+        },
+        {
+          "brand": "奈雪",
+          "count": 133,
+          "share": 0.160241
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 127,
+          "share": 0.153012
+        }
+      ],
+      "average_order_amount": 71.76
+    },
+    {
+      "id": 31,
+      "depth": 3,
+      "samples": 3057,
+      "prediction": "Oat Milk Tea",
+      "dominant_share": 0.208436,
+      "model_prediction": "Oat Milk Tea",
+      "model_dominant_share": 0.208436,
+      "model_class_distribution": {
+        "Fruit Tea": 0.199241,
+        "Light Milk Tea": 0.20056,
+        "Low-Sugar Tea Drinks": 0.192557,
+        "Milk Tea / Cheese Foam / Others": 0.199206,
+        "Oat Milk Tea": 0.208436
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.272489,
+      "class_counts": {
+        "Fruit Tea": 761,
+        "Light Milk Tea": 678,
+        "Low-Sugar Tea Drinks": 833,
+        "Milk Tea / Cheese Foam / Others": 214,
+        "Oat Milk Tea": 571
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.248937,
+        "Light Milk Tea": 0.221786,
+        "Low-Sugar Tea Drinks": 0.272489,
+        "Milk Tea / Cheese Foam / Others": 0.070003,
+        "Oat Milk Tea": 0.186784
+      },
+      "top_brands": [
+        {
+          "brand": "奈雪",
+          "count": 553,
+          "share": 0.180896
+        },
+        {
+          "brand": "茶百道",
+          "count": 544,
+          "share": 0.177952
+        },
+        {
+          "brand": "喜茶",
+          "count": 530,
+          "share": 0.173373
+        },
+        {
+          "brand": "古茗",
+          "count": 499,
+          "share": 0.163232
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 480,
+          "share": 0.157017
+        }
+      ],
+      "average_order_amount": 27.54
+    },
+    {
+      "id": 33,
+      "depth": 4,
+      "samples": 3126,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.235287,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.235287,
+      "model_class_distribution": {
+        "Fruit Tea": 0.191037,
+        "Light Milk Tea": 0.189604,
+        "Low-Sugar Tea Drinks": 0.192923,
+        "Milk Tea / Cheese Foam / Others": 0.235287,
+        "Oat Milk Tea": 0.191149
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.27991,
+      "class_counts": {
+        "Fruit Tea": 765,
+        "Light Milk Tea": 672,
+        "Low-Sugar Tea Drinks": 875,
+        "Milk Tea / Cheese Foam / Others": 265,
+        "Oat Milk Tea": 549
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.244722,
+        "Light Milk Tea": 0.214971,
+        "Low-Sugar Tea Drinks": 0.27991,
+        "Milk Tea / Cheese Foam / Others": 0.084773,
+        "Oat Milk Tea": 0.175624
+      },
+      "top_brands": [
+        {
+          "brand": "奈雪",
+          "count": 560,
+          "share": 0.179143
+        },
+        {
+          "brand": "喜茶",
+          "count": 541,
+          "share": 0.173065
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 536,
+          "share": 0.171465
+        },
+        {
+          "brand": "古茗",
+          "count": 511,
+          "share": 0.163468
+        },
+        {
+          "brand": "茶百道",
+          "count": 508,
+          "share": 0.162508
+        }
+      ],
+      "average_order_amount": 27.78
+    },
+    {
+      "id": 34,
+      "depth": 4,
+      "samples": 1727,
+      "prediction": "Light Milk Tea",
+      "dominant_share": 0.207779,
+      "model_prediction": "Light Milk Tea",
+      "model_dominant_share": 0.207779,
+      "model_class_distribution": {
+        "Fruit Tea": 0.206246,
+        "Light Milk Tea": 0.207779,
+        "Low-Sugar Tea Drinks": 0.194841,
+        "Milk Tea / Cheese Foam / Others": 0.200292,
+        "Oat Milk Tea": 0.190842
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.274464,
+      "class_counts": {
+        "Fruit Tea": 443,
+        "Light Milk Tea": 395,
+        "Low-Sugar Tea Drinks": 474,
+        "Milk Tea / Cheese Foam / Others": 121,
+        "Oat Milk Tea": 294
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.256514,
+        "Light Milk Tea": 0.22872,
+        "Low-Sugar Tea Drinks": 0.274464,
+        "Milk Tea / Cheese Foam / Others": 0.070064,
+        "Oat Milk Tea": 0.170237
+      },
+      "top_brands": [
+        {
+          "brand": "喜茶",
+          "count": 300,
+          "share": 0.173712
+        },
+        {
+          "brand": "奈雪",
+          "count": 289,
+          "share": 0.167342
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 284,
+          "share": 0.164447
+        },
+        {
+          "brand": "茶百道",
+          "count": 280,
+          "share": 0.162131
+        },
+        {
+          "brand": "古茗",
+          "count": 277,
+          "share": 0.160394
+        }
+      ],
+      "average_order_amount": 27.53
+    },
+    {
+      "id": 27,
+      "depth": 3,
+      "samples": 3201,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.219775,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.219775,
+      "model_class_distribution": {
+        "Fruit Tea": 0.203562,
+        "Light Milk Tea": 0.195496,
+        "Low-Sugar Tea Drinks": 0.199455,
+        "Milk Tea / Cheese Foam / Others": 0.219775,
+        "Oat Milk Tea": 0.181713
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.284286,
+      "class_counts": {
+        "Fruit Tea": 820,
+        "Light Milk Tea": 697,
+        "Low-Sugar Tea Drinks": 910,
+        "Milk Tea / Cheese Foam / Others": 249,
+        "Oat Milk Tea": 525
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.25617,
+        "Light Milk Tea": 0.217744,
+        "Low-Sugar Tea Drinks": 0.284286,
+        "Milk Tea / Cheese Foam / Others": 0.077788,
+        "Oat Milk Tea": 0.164011
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 567,
+          "share": 0.177132
+        },
+        {
+          "brand": "喜茶",
+          "count": 566,
+          "share": 0.17682
+        },
+        {
+          "brand": "奈雪",
+          "count": 530,
+          "share": 0.165573
+        },
+        {
+          "brand": "茶百道",
+          "count": 529,
+          "share": 0.165261
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 516,
+          "share": 0.1612
+        }
+      ],
+      "average_order_amount": 71.02
+    },
+    {
+      "id": 29,
+      "depth": 4,
+      "samples": 658,
+      "prediction": "Low-Sugar Tea Drinks",
+      "dominant_share": 0.263731,
+      "model_prediction": "Low-Sugar Tea Drinks",
+      "model_dominant_share": 0.263731,
+      "model_class_distribution": {
+        "Fruit Tea": 0.206093,
+        "Light Milk Tea": 0.201905,
+        "Low-Sugar Tea Drinks": 0.263731,
+        "Milk Tea / Cheese Foam / Others": 0.139131,
+        "Oat Milk Tea": 0.18914
+      },
+      "observed_prediction": "Low-Sugar Tea Drinks",
+      "observed_dominant_share": 0.348024,
+      "class_counts": {
+        "Fruit Tea": 158,
+        "Light Milk Tea": 137,
+        "Low-Sugar Tea Drinks": 229,
+        "Milk Tea / Cheese Foam / Others": 30,
+        "Oat Milk Tea": 104
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.240122,
+        "Light Milk Tea": 0.208207,
+        "Low-Sugar Tea Drinks": 0.348024,
+        "Milk Tea / Cheese Foam / Others": 0.045593,
+        "Oat Milk Tea": 0.158055
+      },
+      "top_brands": [
+        {
+          "brand": "古茗",
+          "count": 120,
+          "share": 0.182371
+        },
+        {
+          "brand": "奈雪",
+          "count": 116,
+          "share": 0.176292
+        },
+        {
+          "brand": "茶百道",
+          "count": 107,
+          "share": 0.162614
+        },
+        {
+          "brand": "喜茶",
+          "count": 106,
+          "share": 0.161094
+        },
+        {
+          "brand": "蜜雪冰城",
+          "count": 101,
+          "share": 0.153495
+        }
+      ],
+      "average_order_amount": 71.47
+    },
+    {
+      "id": 30,
+      "depth": 4,
+      "samples": 343,
+      "prediction": "Milk Tea / Cheese Foam / Others",
+      "dominant_share": 0.226894,
+      "model_prediction": "Milk Tea / Cheese Foam / Others",
+      "model_dominant_share": 0.226894,
+      "model_class_distribution": {
+        "Fruit Tea": 0.218797,
+        "Light Milk Tea": 0.15193,
+        "Low-Sugar Tea Drinks": 0.183118,
+        "Milk Tea / Cheese Foam / Others": 0.226894,
+        "Oat Milk Tea": 0.219261
+      },
+      "observed_prediction": "Fruit Tea",
+      "observed_dominant_share": 0.279883,
+      "class_counts": {
+        "Fruit Tea": 96,
+        "Light Milk Tea": 59,
+        "Low-Sugar Tea Drinks": 91,
+        "Milk Tea / Cheese Foam / Others": 28,
+        "Oat Milk Tea": 69
+      },
+      "class_distribution": {
+        "Fruit Tea": 0.279883,
+        "Light Milk Tea": 0.172012,
+        "Low-Sugar Tea Drinks": 0.265306,
+        "Milk Tea / Cheese Foam / Others": 0.081633,
+        "Oat Milk Tea": 0.201166
+      },
+      "top_brands": [
+        {
+          "brand": "蜜雪冰城",
+          "count": 61,
+          "share": 0.177843
+        },
+        {
+          "brand": "奈雪",
+          "count": 59,
+          "share": 0.172012
+        },
+        {
+          "brand": "古茗",
+          "count": 59,
+          "share": 0.172012
+        },
+        {
+          "brand": "茶百道",
+          "count": 56,
+          "share": 0.163265
+        },
+        {
+          "brand": "喜茶",
+          "count": 52,
+          "share": 0.151603
+        }
+      ],
+      "average_order_amount": 71.26
+    }
+  ]
+}
