@@ -13,7 +13,7 @@
 | Lingyi Zhu | 423013 |
 | Yujia Wang | 423111 |
 
-## 🌟 Project Overview
+### Project Overview
 Outside of China, international consumers often feel completely lost when navigating the modern Chinese tea and freshly made beverage culture due to linguistic barriers and an overwhelming number of milk tea chains. 
 
 **ChinaBev** bridges this gap by merging macro market trends with micro consumer habits into a single, cohesive, story-driven digital experience. 
