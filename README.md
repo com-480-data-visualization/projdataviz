@@ -1,3 +1,4 @@
+# ChinaBev: China's Freshly Made Beverage Market
 # Project of Data Visualization (COM-480)
 
 **Project URL:** [ChinaBev](https://china-bev.netlify.app/)
@@ -12,9 +13,16 @@
 | Lingyi Zhu | 423013 |
 | Yujia Wang | 423111 |
 
-## Milestone 3 (29th May, 5pm)
+## 🌟 Project Overview
+Outside of China, international consumers often feel completely lost when navigating the modern Chinese tea and freshly made beverage culture due to linguistic barriers and an overwhelming number of milk tea chains. 
 
-**80% of the final grade**
+**ChinaBev** bridges this gap by merging macro market trends with micro consumer habits into a single, cohesive, story-driven digital experience. 
+Combining data from **1,219 beverage brands** and **31,800 consumer order records**, the project guides users through three narrative modules:
+
+1. **Interactive Consumer Preference Tree:** An immediate hook allowing users to find their tailored drink type based on personal preferences.
+2. **Brand Market Landscape:** A macro view exploring brand popularity, market shares, store numbers, and pricing strategies.
+3. **Consumer Behavior Analysis:** A localized micro-analysis diving into regional demographics, consumption motives, and social trends across different cities.
+
 
 ### Final Website
 
@@ -89,7 +97,3 @@ It describes the design path, challenges, design decisions, changes from the fir
 
 The decision-tree recommendation section is exploratory. It is designed to visualize consumer profile patterns and should not be interpreted as a high-accuracy prediction model.
 
-## Late policy
-
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
