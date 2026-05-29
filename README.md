@@ -1,5 +1,7 @@
 # Project of Data Visualization (COM-480)
 
+**Project URL:** [ChinaBev](https://china-bev.netlify.app/)
+
 | Student's name | SCIPER |
 | -------------- | ------ |
 | Missipsa Annane | 423060 |
@@ -87,4 +89,3 @@ The decision-tree recommendation section is exploratory. It is designed to visua
 
 - < 24h: 80% of the grade for the milestone
 - < 48h: 70% of the grade for the milestone
-
