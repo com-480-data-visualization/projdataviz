@@ -1,7 +1,9 @@
 # Project of Data Visualization (COM-480)
 
 **Project URL:** [ChinaBev](https://china-bev.netlify.app/)
+
 **Presentation video:** [Video](https://youtu.be/a-8CaBSqmO4)
+
 **Process book:** [Our process_Book](milestones/Process_Book.pdf)
 
 | Student's name | SCIPER |
