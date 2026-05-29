@@ -6,9 +6,8 @@
  * Aligned perfectly with brand categories: Tea drinks, Coffee, and Milk drinks.
  */
 import * as d3 from 'd3';
-let bubbleSimulation = null; // Global force simulation pointer to prevent memory leaks during view toggles
+let bubbleSimulation = null; 
 
-// Category colors aligned with standard scheme
 const colors = {
     "Tea drinks": "#f59e0b",
     "Coffee": "#10b981",
@@ -30,9 +29,6 @@ const categoryTranslations = {
     "Milk drinks": "Milk Drinks / Dairy Drinks"
 };
 
-/**
- * Robust Category Normalizer
- */
 function normalizeCategory(rawCat, brandName = "") {
     const r = String(rawCat || "").toLowerCase().trim();
     const n = String(brandName || "").toLowerCase().trim();
@@ -49,9 +45,6 @@ function normalizeCategory(rawCat, brandName = "") {
     return "Tea drinks";
 }
 
-/**
- * Dynamically injects interactive styles into the document head
- */
 function injectStyles() {
     if (document.getElementById("bubble-chart-interactive-styles")) return;
     
@@ -268,7 +261,7 @@ function injectStyles() {
             background: var(--text-gray);
         }
 
-        /* ── Webkit Slider Thumb ── */
+        /* Webkit Slider Thumb */
         #bubble-count-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -291,7 +284,7 @@ function injectStyles() {
             background: var(--secondary-light, #ff5e7e);
         }
 
-        /* ── Firefox Slider Thumb ── */
+        /* Firefox Slider Thumb */
         #bubble-count-slider::-moz-range-thumb {
             width: 15px;
             height: 15px;
@@ -329,18 +322,13 @@ function injectStyles() {
     document.head.appendChild(style);
 }
 
-/**
- * 2-A: Render interactive force-directed Bubble Cloud
- */
 export function renderBubbleCloud(brandData, limit, coreBrands = []) {
     injectStyles();
 
     const outerContainer = d3.select("#market-concentration-chart");
-    outerContainer.selectAll("*").remove(); // Clean container
+    outerContainer.selectAll("*").remove();
+    if (bubbleSimulation) bubbleSimulation.stop();
 
-    if (bubbleSimulation) bubbleSimulation.stop(); // Safe reset
-
-    // Create relative outer wrapper
     const container = outerContainer.append("div")
         .attr("class", "chart-relative-container");
 
@@ -353,7 +341,6 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
         return;
     }
 
-    // Clean, normalize and map properties dynamically
     const dataSlice = brandData.slice(0, limit)
         .filter(d => d && d.stores > 0)
         .map((d, index) => {
@@ -361,7 +348,7 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
             return {
                 ...d,
                 category: normalizeCategory(rawCategory, d.name),
-                rank: index + 1, // National market rank
+                rank: index + 1,
                 isCore: coreBrands.includes(d.name)
             };
         });
@@ -371,19 +358,14 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
         return;
     }
 
-    console.log("[Part 2] Bubble Cloud Rendered Size:", dataSlice.length);
-
-    // Append primary SVG canvas
     const svg = container.append("svg")
         .attr("width", width)
         .attr("height", height)
         .style("background", "transparent");
 
-    // Radius scale proportional to maximum stores
     const maxStores = d3.max(brandData, d => +d.stores) || 25000;
     const radiusScale = d3.scaleSqrt().domain([1, maxStores]).range([15, 75]);
 
-    // Setup definitions (Defs) for dynamic clipPaths (one clipPath per brand to keep logos rounded)
     const defs = svg.append("defs");
     const getClipId = (d, i) => `clip-logo-${d.name.replace(/[^a-zA-Z0-9]/g, "")}-${i}`;
 
@@ -394,7 +376,6 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
             .attr("r", radiusScale(d.stores));
     });
 
-    // 1. Plot Brand Category Legend
     const legendPanel = container.append("div")
         .attr("class", "bubble-legend-panel");
     
@@ -413,7 +394,6 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
         item.append("span").text(`${getCategoryLogo(cat)} ${categoryTranslations[cat] || cat}`);
     });
 
-    // 2. Setup Details Card Panel
     const detailsCard = container.append("div")
         .attr("class", "bubble-details-card");
     
@@ -454,7 +434,6 @@ export function renderBubbleCloud(brandData, limit, coreBrands = []) {
     }
     updateDetailsCard(null);
 
-    // 3. Setup Brand Selection Controller Panel (Brand Locator Panel)
     const controlPanel = container.append("div")
         .attr("class", "bubble-control-panel");
 

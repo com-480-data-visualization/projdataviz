@@ -80,7 +80,7 @@ function injectStyles() {
             background: var(--text-gray);
         }
 
-        /* ── Webkit Slider Thumb (Chrome, Safari, Edge) ── */
+        /* Webkit Slider Thumb (Chrome, Safari, Edge) */
         #dot-slider::-webkit-slider-thumb, #bubble-count-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -122,24 +122,18 @@ function injectStyles() {
     document.head.appendChild(style);
 }
 
-/**
- * Intelligent category normalization function (matches categories via high-priority heuristics)
- */
 function normalizeCategory(rawCat, brandName = "") {
     const r = String(rawCat || "").toLowerCase().trim();
     const n = String(brandName || "").toLowerCase().trim();
     
-    // 1. High priority: Coffee track (check category or brand name for coffee keywords)
     if (r.includes("coffee") || n.includes("coffee") || n.includes("咖啡") || r.includes("咖啡")) {
         return "Coffee";
     }
     
-    // 2. Medium priority: Milk drink track (prevents Milk Tea from being misclassified as Tea)
     if (r.includes("milk") || r.includes("cheese") || r.includes("foam") || r.includes("dairy") || n.includes("milk") || n.includes("乳") || n.includes("奶")) {
         return "Milk drinks";
     }
     
-    // 3. Low priority: Tea drink track
     if (r.includes("tea") || r.includes("fruit") || r.includes("sugar") || n.includes("茶")) {
         return "Tea drinks";
     }
@@ -147,9 +141,6 @@ function normalizeCategory(rawCat, brandName = "") {
     return "Tea drinks"; // Default fallback
 }
 
-/**
- * Get or dynamically initialize the global interactive floating tooltip
- */
 function getOrCreateTooltip() {
     let t = d3.select("#global-tooltip");
     if (t.empty()) {
@@ -171,10 +162,6 @@ function getOrCreateTooltip() {
     return t;
 }
 
-/**
- * Render interactive gradient boxplot + jittered scatter plot
- * @param {Array} brandData The provided macro brand dataset
- */
 export function renderPriceDistribution(brandData, dotLimit = 60) {
     injectStyles();
     const container = d3.select("#price-distribution-chart");
@@ -183,7 +170,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
     let width = container.node().clientWidth || 800;
     let height = 450;
     
-    // Create container with glassmorphism effect and soft borders
     const chartWrapper = container.append("div")
         .attr("class", "chart-relative-container")
         .style("height", height + "px")
@@ -200,7 +186,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
 
     const margin = { top: 50, right: 40, bottom: 60, left: 65 };
 
-    // 💡 Defensive cleaning of brand fields: compatibility for mixed keys like Name/name, stores/Number of Stores
     const validData = brandData.map(d => {
         if (!d) return null;
         const name = d.name || d.Name || "Unknown";
@@ -224,7 +209,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
         return { name, category, price, stores };
     }).filter(d => d && d.price > 0 && d.category);
 
-    console.log("[Price Distribution Module] Successfully loaded brand records after field normalization:", validData.length);
 
     if (validData.length === 0) {
         chartWrapper.html(`
@@ -240,7 +224,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
 
     const categories = Object.keys(colors);
 
-    // Calculate boxplot quantiles for the three main categories
     const boxplotData = categories.map(cat => {
         const records = validData.filter(d => d.category === cat);
         const prices = records.map(d => d.price).sort(d3.ascending);
@@ -255,13 +238,9 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
             max = Math.min(d3.max(prices), q3 + 1.5 * iqr);
         }
 
-        // 💡 Visual noise reduction: to prevent chart clutter, limit default rendering to at most 60 representative random dots.
-        // The quantile calculation above remains based on 100% of actual data for mathematical precision.
         const sampledRecords = records.length > dotLimit 
             ? d3.shuffle([...records]).slice(0, dotLimit) 
             : records;
-
-        console.log(`[Price Distribution Module] Category "${cat}" Metrics: Median=¥${median.toFixed(2)}, Total Count=${records.length}, Rendered Scatter Dots=${sampledRecords.length}`);
 
         return {
             category: cat,
@@ -276,7 +255,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
         .range([margin.left, width - margin.right])
         .padding(0.45);
 
-    // Dynamically adjust Y-axis maximum scale
     const maxPriceVal = d3.max(validData, d => d.price) * 1.05 || 50;
     const y = d3.scaleLinear()
         .domain([0, maxPriceVal])
@@ -285,7 +263,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
 
     const tooltip = getOrCreateTooltip();
 
-    // Draw horizontal dashed background lines
     const yTicks = y.ticks(8);
     svg.append("g")
         .selectAll("line")
@@ -479,9 +456,6 @@ export function renderPriceDistribution(brandData, dotLimit = 60) {
     });
 }
 
-/**
- * 2. New: Frequency distribution of brand prices per category (Stacked Histogram)
- */
 export function renderGroupedHistogram(brandData) {
     const container = d3.select("#price-distribution-chart");
     container.selectAll("*").remove();
@@ -504,9 +478,6 @@ export function renderGroupedHistogram(brandData) {
         .attr("height", height)
         .style("background", "transparent");
 
-    // ----------------------------------------------------
-    // 1. Alignment: Filtering, cleaning, and category normalization
-    // ----------------------------------------------------
     const validData = brandData.map(d => {
         if (!d) return null;
         const name = d.name || d.Name || "Unknown";
@@ -525,9 +496,6 @@ export function renderGroupedHistogram(brandData) {
     const categories = Object.keys(colors);
     const maxPriceVal = d3.max(validData, d => d.price) || 40;
 
-    // ----------------------------------------------------
-    // 2. Binning logic
-    // ----------------------------------------------------
     const binGenerator = d3.bin()
         .value(d => d.price)
         .domain([0, Math.ceil(maxPriceVal / 5) * 5])
@@ -549,9 +517,6 @@ export function renderGroupedHistogram(brandData) {
         };
     });
 
-    // ----------------------------------------------------
-    // 3. Dual scales for grouped histogram
-    // ----------------------------------------------------
     const xGroup = d3.scaleBand()
         .domain(groupedData.map(d => d.label))
         .range([margin.left, width - margin.right])
@@ -570,9 +535,6 @@ export function renderGroupedHistogram(brandData) {
 
     const tooltip = getOrCreateTooltip();
 
-    // ----------------------------------------------------
-    // 4. Grid lines and axes
-    // ----------------------------------------------------
     svg.append("g")
         .selectAll("line")
         .data(y.ticks(6))
@@ -657,9 +619,6 @@ export function renderGroupedHistogram(brandData) {
     legendItems.append("xhtml:span")
         .text(d => `${getCategoryLogo(d)} ${categoryTranslations[d] || d}`);
 
-    // ----------------------------------------------------
-    // 6. Draw bars + grow animation
-    // ----------------------------------------------------
     const itemGroups = svg.append("g")
         .selectAll(".price-group")
         .data(groupedData)
@@ -713,9 +672,6 @@ export function renderGroupedHistogram(brandData) {
         })
         .style("opacity", d => d.count > 0 ? 0.95 : 0); 
 
-    // ----------------------------------------------------
-    // 7. Interaction binding
-    // ----------------------------------------------------
     bars.on("mouseover", function(event, d) {
         const parentData = d3.select(this.parentNode).datum();
         d3.select(this).attr("opacity", 1.0);
