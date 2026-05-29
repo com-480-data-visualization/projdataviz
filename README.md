@@ -58,23 +58,24 @@ http://localhost:3000/
 
 ```txt
 .
-├── index.html                  # Core single-page application entry point
-├── package.json                # Project configuration and dependency manifest
+
+├── index.html      # only html page
+
+├── package.json
+
 ├── assets
-│   ├── css                     # Unified stylesheets
-│   │   └── main.css            # Entry point establishing global CSS variables & theme palettes
-│   ├── js                      # Modular visualization logic scripts
-│   │   └── main.js             # Asynchronous pipeline & event dispatching orchestrator
-│   └── data                    # Preprocessed and translated linguistic schemas
-│       ├── drink_shops.json            # Macro brand metrics for 1,219 beverage chains
-│       ├── consumer_behavior.json      # Granular micro-transaction dataset of 31,800 orders
-│       ├── beverage_decision_tree.json # Structured JSON model mapping prediction nodes
-│       ├── city.json                   # Regional metrics stratified by urban city tiers
-│       └── product_type_popularity.json# Market share details for the top 5 beverage categories
-├── utils                       
-│   └── scripts                 # Offline preprocessing and data-cleansing pipelines
-└── milestones                  # Project documentation repository
-    └── Process_Book.pdf        # Complete design iteration and technical overview document
+
+│   ├── css         # css styles : main.css is the 'entry point'
+
+│   ├── js          # js scripts : main.js is the entry point
+
+│   └── data        # all the JSON data used throughout the website
+
+├── utils           
+
+│   └── scripts     # offline scripts (not used actively for the website)
+
+└── milestones      # milestones related documents
 ```
 
 ### Data
